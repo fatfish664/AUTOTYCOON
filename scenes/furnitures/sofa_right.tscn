@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://do2f4iybq61jq"]
+
+[ext_resource type="Texture2D" uid="uid://dsm4vfs8gbasf" path="res://art_resource/relaxing_item/Sofa_right.png" id="1_0wkc4"]
+[ext_resource type="Script" uid="uid://65v5wb1nbwkh" path="res://scripts/furniture/sofa.gd" id="1_ed4cn"]
+[ext_resource type="Texture2D" uid="uid://blam253k2bxlr" path="res://art_resource/relaxing_item/Sofa_right_side.png" id="2_bql0r"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="3_bql0r"]
+[ext_resource type="Texture2D" uid="uid://c8tflhbqo02le" path="res://art_resource/relaxing_item/Sofa_right_1.png" id="4_3ogqv"]
+[ext_resource type="Script" uid="uid://d2cguxqm3ur7x" path="res://scripts/furniture/sit_area.gd" id="5_6xn6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed4cn"]
+size = Vector2(38, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xn6m"]
+size = Vector2(38, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wkc4"]
+size = Vector2(40, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ogqv"]
+size = Vector2(14.5, 24.5)
+
+[node name="SofaRight" type="StaticBody2D"]
+script = ExtResource("1_ed4cn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0wkc4")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -13)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_bql0r")
+
+[node name="SofaHide" type="Sprite2D" parent="."]
+position = Vector2(0, 18.5)
+texture = ExtResource("4_3ogqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ed4cn")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("3_bql0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_6xn6m")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0wkc4")
+
+[node name="SitArea" type="Area2D" parent="."]
+script = ExtResource("5_6xn6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SitArea"]
+position = Vector2(-16.75, 5.25)
+shape = SubResource("RectangleShape2D_3ogqv")
+
+[node name="SitPlace" type="Marker2D" parent="SitArea"]
+position = Vector2(-12, -7)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-23, 3)

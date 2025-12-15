@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1lvv50nfnly3"]
+
+[ext_resource type="Script" uid="uid://c2e66hyxru2yh" path="res://scripts/furniture/seats_1_front_blue.gd" id="1_vwg8w"]
+[ext_resource type="Texture2D" uid="uid://cynpvck8ufhea" path="res://art_resource/thing/Seats1_front_blue.png" id="2_sk5mr"]
+[ext_resource type="Script" uid="uid://bsmgh2utlehd4" path="res://scripts/ub_draggable.gd" id="3_eaqit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qptkx"]
+size = Vector2(28, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atibf"]
+size = Vector2(28, 20)
+
+[node name="Seats1FrontBlue" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_vwg8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sk5mr")
+script = ExtResource("3_eaqit")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_qptkx")
+
+[node name="PutPlace" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_atibf")

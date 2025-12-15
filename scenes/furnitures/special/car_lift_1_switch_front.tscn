@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq5sqnshxhua6"]
+
+[ext_resource type="Texture2D" uid="uid://cxib4k7ls7l71" path="res://art_resource/cars/car Lift1/car Lift1_switch1.png" id="1_4gilg"]
+[ext_resource type="Script" uid="uid://dvw4pfj0qvuxs" path="res://scripts/furniture/tool/switch.gd" id="1_ci3js"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="2_v2t45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2t45"]
+size = Vector2(22, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci3js"]
+size = Vector2(22, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7y6e"]
+size = Vector2(22, 35)
+
+[node name="CarLift1SwitchFront" type="StaticBody2D"]
+script = ExtResource("1_ci3js")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4gilg")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_v2t45")
+
+[node name="PutPlace" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("2_v2t45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_ci3js")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, -5.5)
+shape = SubResource("RectangleShape2D_t7y6e")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-4, -2)

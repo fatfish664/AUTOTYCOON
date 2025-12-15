@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://byircv7c523go"]
+
+[ext_resource type="Script" uid="uid://d0sa0y5pw8iy8" path="res://scripts/ui.gd" id="1_fyqef"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fyqef")
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 781.0
+offset_top = 20.0
+offset_right = 821.0
+offset_bottom = 43.0
+grow_horizontal = 0
+horizontal_alignment = 2

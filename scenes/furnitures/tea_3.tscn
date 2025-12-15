@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dweyqrb78mo0u"]
+
+[ext_resource type="Script" uid="uid://bva1ja2mdho8d" path="res://scripts/furniture/tea_3.gd" id="1_futkp"]
+[ext_resource type="Texture2D" uid="uid://dh16dwt0lib50" path="res://art_resource/Fewobject/Tea_3.png" id="1_gvnaw"]
+[ext_resource type="Script" uid="uid://bsjgjfnsxrh2s" path="res://scripts/ub.gd" id="2_futkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dso75"]
+size = Vector2(10, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lhjh"]
+size = Vector2(10, 5)
+
+[node name="Tea3" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_futkp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gvnaw")
+script = ExtResource("2_futkp")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dso75")
+
+[node name="PutPlace" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_2lhjh")

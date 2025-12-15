@@ -1,0 +1,185 @@
+[gd_scene load_steps=24 format=3 uid="uid://desw5tl53f2w6"]
+
+[ext_resource type="Texture2D" uid="uid://do3brpv5ausac" path="res://art_resource/cars/car Lift1/car Lift1.png" id="1_3dvn3"]
+[ext_resource type="Script" uid="uid://bh2ielpcwdd6a" path="res://scripts/furniture/car_lift.gd" id="1_mqw0b"]
+[ext_resource type="Texture2D" uid="uid://bv0j83ely04w6" path="res://art_resource/cars/car Lift1/car Lift1_up_13.png" id="2_mqw0b"]
+[ext_resource type="Texture2D" uid="uid://db2jn064ay6nl" path="res://art_resource/cars/car Lift1/car Lift1_up_12.png" id="3_ux1nm"]
+[ext_resource type="Texture2D" uid="uid://qsiqllykub60" path="res://art_resource/cars/car Lift1/car Lift1_up_11.png" id="4_l4qeu"]
+[ext_resource type="Texture2D" uid="uid://cfrfgrkd6j32t" path="res://art_resource/cars/car Lift1/car Lift1_up_10.png" id="5_ll3eq"]
+[ext_resource type="Texture2D" uid="uid://oryjs7uljfvf" path="res://art_resource/cars/car Lift1/car Lift1_up_9.png" id="6_8xogl"]
+[ext_resource type="Texture2D" uid="uid://gl5n7ea2xcw4" path="res://art_resource/cars/car Lift1/car Lift1_up_8.png" id="7_7uf7r"]
+[ext_resource type="Texture2D" uid="uid://cou238tngujte" path="res://art_resource/cars/car Lift1/car Lift1_up_7.png" id="8_ib8di"]
+[ext_resource type="Texture2D" uid="uid://6crce2abuico" path="res://art_resource/cars/car Lift1/car Lift1_up_6.png" id="9_kstiv"]
+[ext_resource type="Texture2D" uid="uid://hv6ssaaph5g6" path="res://art_resource/cars/car Lift1/car Lift1_up_5.png" id="10_8m20x"]
+[ext_resource type="Texture2D" uid="uid://cj4wekb5i4obr" path="res://art_resource/cars/car Lift1/car Lift1_up_4.png" id="11_4jstu"]
+[ext_resource type="Texture2D" uid="uid://r7rpn661w3ih" path="res://art_resource/cars/car Lift1/car Lift1_up_3.png" id="12_45rsb"]
+[ext_resource type="Texture2D" uid="uid://4da2katfu036" path="res://art_resource/cars/car Lift1/car Lift1_up_2.png" id="13_bkkx0"]
+[ext_resource type="Texture2D" uid="uid://dssa6bqa6h6kg" path="res://art_resource/cars/car Lift1/car Lift1_up_1.png" id="14_b87oc"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="15_wxv0i"]
+[ext_resource type="Script" uid="uid://bdlxendqw4e2e" path="res://scripts/furniture/control_area.gd" id="17_ux1nm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bv2fd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mqw0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ux1nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l4qeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ll3eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8xogl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7uf7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ib8di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kstiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8m20x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4jstu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_45rsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bkkx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b87oc")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_b87oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bkkx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_45rsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4jstu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8m20x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kstiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ib8di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7uf7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8xogl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ll3eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l4qeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ux1nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mqw0b")
+}],
+"loop": false,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux1nm"]
+size = Vector2(99, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yahf3"]
+size = Vector2(193, 71.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pploa"]
+size = Vector2(272, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnihq"]
+size = Vector2(272, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4qeu"]
+size = Vector2(331, 142)
+
+[node name="CarLift" type="StaticBody2D"]
+script = ExtResource("1_mqw0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3dvn3")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -48)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -32.5)
+sprite_frames = SubResource("SpriteFrames_bv2fd")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_ux1nm")
+
+[node name="RepairCollsion" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5, -0.25)
+shape = SubResource("RectangleShape2D_yahf3")
+
+[node name="PutPlace" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("15_wxv0i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_pploa")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, -6)
+shape = SubResource("RectangleShape2D_fnihq")
+
+[node name="ControlArea" type="Area2D" parent="."]
+script = ExtResource("17_ux1nm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ControlArea"]
+shape = SubResource("RectangleShape2D_l4qeu")
+
+[node name="ParkingPlace" type="Marker2D" parent="."]
+position = Vector2(-2, -5)
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Checkpoints"]
+position = Vector2(76, -15)
+
+[node name="Marker2D2" type="Marker2D" parent="Checkpoints"]
+position = Vector2(-63, -12)
+
+[node name="ToolPlace" type="Marker2D" parent="."]
+position = Vector2(-164, -21)
+
+[node name="EliminateOil" type="Marker2D" parent="."]
+position = Vector2(159, -5)

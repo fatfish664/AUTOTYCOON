@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dokqbxor8swky"
+path="res://.godot/imported/Jack_brake repair_side_end_1.png-5f378cd762c91eb5206263e05980f2e9.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://art_resource/roles/Jack Miller/repair/brake repair/Jack_brake repair_side_end_1.png"
+dest_files=["res://.godot/imported/Jack_brake repair_side_end_1.png-5f378cd762c91eb5206263e05980f2e9.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

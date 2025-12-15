@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://6csw0sem2oyi"]
+
+[ext_resource type="Script" uid="uid://dnkycxtqeecvn" path="res://scripts/furniture/cup.gd" id="1_358bg"]
+[ext_resource type="Texture2D" uid="uid://bv5m2j2ygu8lj" path="res://art_resource/Fewobject/Cup.png" id="1_hxhe5"]
+[ext_resource type="Script" uid="uid://bsjgjfnsxrh2s" path="res://scripts/ub.gd" id="2_358bg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ki1x"]
+size = Vector2(12, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v65a"]
+size = Vector2(12, 6.5)
+
+[node name="Cup" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_358bg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hxhe5")
+script = ExtResource("2_358bg")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_5ki1x")
+
+[node name="PutPlace" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 3.25)
+shape = SubResource("RectangleShape2D_7v65a")

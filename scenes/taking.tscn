@@ -1,0 +1,267 @@
+[gd_scene load_steps=40 format=3 uid="uid://dy6mmkyvik8jo"]
+
+[ext_resource type="Texture2D" uid="uid://d3abx1fpopg4i" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action/drink1_fridge_action_16.png" id="1_e6c7m"]
+[ext_resource type="Script" uid="uid://25k2w531ciw7" path="res://scripts/taking.gd" id="1_nc8ml"]
+[ext_resource type="Texture2D" uid="uid://cmwbc8wauewtj" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action/drink1_fridge_action_17.png" id="2_tnfor"]
+[ext_resource type="Texture2D" uid="uid://crwo35ea03rs1" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action/drink1_fridge_action_18.png" id="3_4o1cj"]
+[ext_resource type="Texture2D" uid="uid://fcn11qp6h62h" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action/drink1_fridge_action_19.png" id="4_88r7x"]
+[ext_resource type="Texture2D" uid="uid://drl233vg7p4xd" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action_end/drink1_fridge_action_end_4.png" id="5_nc8ml"]
+[ext_resource type="Texture2D" uid="uid://bpdyvie4idqnw" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action_end/drink1_fridge_action_end_5.png" id="6_hur5m"]
+[ext_resource type="Texture2D" uid="uid://d07pe3f8eyvad" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action_end/drink1_fridge_action_end_6.png" id="7_yoli5"]
+[ext_resource type="Texture2D" uid="uid://bgx2pj0uv5cxu" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action_end_right/drink1_fridge_action_end_right_4.png" id="9_hur5m"]
+[ext_resource type="Texture2D" uid="uid://p6y42ld8hgu6" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action_end_right/drink1_fridge_action_end_right_5.png" id="10_yoli5"]
+[ext_resource type="Texture2D" uid="uid://c2ca86yveqav2" path="res://art_resource/roles/Jack Miller/fridge_action/jack_fridge_action_end_right/drink1_fridge_action_end_right_6.png" id="11_i6di8"]
+[ext_resource type="Texture2D" uid="uid://bqvpq6lwl6kg1" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_1.png" id="12_43x6j"]
+[ext_resource type="Texture2D" uid="uid://cv5mvpigy1h53" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_2.png" id="13_1nptn"]
+[ext_resource type="Texture2D" uid="uid://bn421lwepg2x4" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_3.png" id="14_ajwph"]
+[ext_resource type="Texture2D" uid="uid://dlqlkonncrx14" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_4.png" id="15_oa3tp"]
+[ext_resource type="Texture2D" uid="uid://bufd5ctqc754l" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_5.png" id="16_5u7wb"]
+[ext_resource type="Texture2D" uid="uid://br4f84f8kx215" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_6.png" id="17_l5yuw"]
+[ext_resource type="Texture2D" uid="uid://8olwh8vjpcrs" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_7.png" id="18_e40k0"]
+[ext_resource type="Texture2D" uid="uid://668dfhchjmva" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_front/drink1_walk_front_8.png" id="19_s55f3"]
+[ext_resource type="Texture2D" uid="uid://bjojr548isy0w" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_1.png" id="20_acaqs"]
+[ext_resource type="Texture2D" uid="uid://ckjaiffcidq1" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_2.png" id="21_qx7mm"]
+[ext_resource type="Texture2D" uid="uid://dqbnrp0p62fmj" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_3.png" id="22_q7wur"]
+[ext_resource type="Texture2D" uid="uid://b52c41t6hrpj" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_4.png" id="23_fxsvs"]
+[ext_resource type="Texture2D" uid="uid://dsbhuppv27eg" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_5.png" id="24_gddt0"]
+[ext_resource type="Texture2D" uid="uid://c8r3c2uphs134" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_6.png" id="25_vmmbm"]
+[ext_resource type="Texture2D" uid="uid://bew3mbvl3s7hc" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_7.png" id="26_uc1jm"]
+[ext_resource type="Texture2D" uid="uid://c2o6gafq0yk7k" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_8.png" id="27_i66br"]
+[ext_resource type="Texture2D" uid="uid://cl3c4qp06rbe8" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk/drink1_walk_9.png" id="28_fssow"]
+[ext_resource type="Texture2D" uid="uid://dklx35k3nh7m7" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_1.png" id="29_mp5lf"]
+[ext_resource type="Texture2D" uid="uid://bnqlxhlg8ps83" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_2.png" id="30_tiwbf"]
+[ext_resource type="Texture2D" uid="uid://dw6cknia1q5g" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_3.png" id="31_y1cj6"]
+[ext_resource type="Texture2D" uid="uid://bykb8uhixu27i" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_4.png" id="32_1ret6"]
+[ext_resource type="Texture2D" uid="uid://dyn2cnh40l2gk" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_5.png" id="33_4avjd"]
+[ext_resource type="Texture2D" uid="uid://bf8muetgtiti4" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_6.png" id="34_1jpof"]
+[ext_resource type="Texture2D" uid="uid://dfcswsebwnu4p" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_7.png" id="35_o4qbm"]
+[ext_resource type="Texture2D" uid="uid://cielmmrpe6po7" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_8.png" id="36_s3fbk"]
+[ext_resource type="Texture2D" uid="uid://dashdtebj50if" path="res://art_resource/roles/Jack Miller/drink/Jack_drink_walk_right/drink1_walk_right_9.png" id="37_8hrw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6di8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_e6c7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tnfor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4o1cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_88r7x")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"drink1_fridge_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nc8ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hur5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yoli5")
+}],
+"loop": false,
+"name": &"drink1_fridge_back_end_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hur5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yoli5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i6di8")
+}],
+"loop": false,
+"name": &"drink1_fridge_back_end_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"drink1_walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_43x6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1nptn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ajwph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oa3tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5u7wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_l5yuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e40k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_s55f3")
+}],
+"loop": true,
+"name": &"drink1_walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_acaqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qx7mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q7wur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fxsvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gddt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vmmbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_uc1jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_i66br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fssow")
+}],
+"loop": true,
+"name": &"drink1_walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_mp5lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tiwbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_y1cj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1ret6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4avjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1jpof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_o4qbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_s3fbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8hrw6")
+}],
+"loop": true,
+"name": &"drink1_walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na1xi"]
+size = Vector2(0, 0)
+
+[node name="Taking" type="Area2D"]
+script = ExtResource("1_nc8ml")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i6di8")
+animation = &"drink1_walk_back"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_na1xi")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgw4n0upgqlsh"]
+
+[ext_resource type="Script" uid="uid://7mr7n5bwbqmr" path="res://scripts/global/time_system.gd" id="1_l3txm"]
+
+[node name="TimeSystem" type="Node"]
+script = ExtResource("1_l3txm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 387.0
+offset_top = -240.0
+offset_right = 427.0
+offset_bottom = -217.0

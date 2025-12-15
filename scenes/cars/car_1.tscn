@@ -1,0 +1,143 @@
+[gd_scene load_steps=12 format=3 uid="uid://bylu6827t4jad"]
+
+[ext_resource type="Script" uid="uid://lvn8lwxlkpje" path="res://scripts/car/car_1.gd" id="1_j1m8h"]
+[ext_resource type="Texture2D" uid="uid://byvwav1p6hwa4" path="res://art_resource/cars/car1/car1.png" id="1_nq8y1"]
+[ext_resource type="Texture2D" uid="uid://befrtwiuirg11" path="res://art_resource/cars/car1/car1_brake.png" id="2_aychs"]
+[ext_resource type="Texture2D" uid="uid://cto2opy0cc1s2" path="res://art_resource/cars/car1/car1_hood_1.png" id="2_y1b06"]
+[ext_resource type="Texture2D" uid="uid://4svhhlk0r5g0" path="res://art_resource/cars/car1/hood_3.png" id="3_aychs"]
+[ext_resource type="Texture2D" uid="uid://kuly4mhxuhf4" path="res://art_resource/cars/car1/car1_tire.png" id="3_ko4na"]
+[ext_resource type="Texture2D" uid="uid://dmanuvrl1rtt2" path="res://art_resource/cars/car1/hood_2.png" id="4_ko4na"]
+[ext_resource type="Script" uid="uid://eh0ayp3oubos" path="res://scripts/car/parking_area.gd" id="8_ko4na"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppuit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ko4na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ko4na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y1b06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y1b06")
+}],
+"loop": false,
+"name": &"close_hood",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y1b06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y1b06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y1b06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ko4na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ko4na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aychs")
+}],
+"loop": false,
+"name": &"open_hood",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppd32"]
+size = Vector2(196, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppuit"]
+size = Vector2(69, 32)
+
+[node name="Car1" type="StaticBody2D"]
+script = ExtResource("1_j1m8h")
+
+[node name="Car1Brake" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+texture = ExtResource("2_aychs")
+
+[node name="ShelterBase" type="Marker2D" parent="Car1Brake"]
+position = Vector2(1, -15)
+
+[node name="CarTire1" type="Sprite2D" parent="."]
+position = Vector2(69, 32)
+texture = ExtResource("3_ko4na")
+
+[node name="CarTire2" type="Sprite2D" parent="."]
+position = Vector2(-48, 33)
+texture = ExtResource("3_ko4na")
+
+[node name="CarUpper" type="Sprite2D" parent="."]
+texture = ExtResource("1_nq8y1")
+
+[node name="Marker2D" type="Marker2D" parent="CarUpper"]
+visible = false
+position = Vector2(112, -17)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ppuit")
+animation = &"open_hood"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 14.5)
+shape = SubResource("RectangleShape2D_ppd32")
+
+[node name="ParkingArea" type="Area2D" parent="."]
+script = ExtResource("8_ko4na")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParkingArea"]
+position = Vector2(11.5, 14)
+shape = SubResource("RectangleShape2D_ppuit")
+
+[node name="Marker2D" type="Marker2D" parent="ParkingArea"]
+position = Vector2(9, 12)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(20, 32)
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Checkpoints"]
+position = Vector2(-28, -49)
+
+[node name="Marker2D2" type="Marker2D" parent="Checkpoints"]
+position = Vector2(-84, -48)
+
+[node name="Marker2D3" type="Marker2D" parent="Checkpoints"]
+position = Vector2(-111, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="Checkpoints"]
+position = Vector2(-8, 37)
+
+[node name="Marker2D5" type="Marker2D" parent="Checkpoints"]
+position = Vector2(23, 42)

@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://6kh4d1bumtdc"]
+
+[ext_resource type="Script" uid="uid://chdhpeap8x2yf" path="res://scripts/storage/shop_item_slot.gd" id="1_kcvt8"]
+[ext_resource type="Texture2D" uid="uid://dh6r7t8yq7nuu" path="res://art_resource/Store/xk.png" id="2_qsles"]
+[ext_resource type="Texture2D" uid="uid://sfrppepyuo4a" path="res://art_resource/Store/xxk.png" id="3_ylmtb"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="4_qsles"]
+
+[node name="ShopItemSlot" type="MarginContainer"]
+script = ExtResource("1_kcvt8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_qsles")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ylmtb")
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_qsles")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_qsles")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2

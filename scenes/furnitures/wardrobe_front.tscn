@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1gir13h2455q"]
+
+[ext_resource type="Script" uid="uid://c5j4uptmt4s6p" path="res://scripts/furniture/wardrobe.gd" id="1_8i4ir"]
+[ext_resource type="Texture2D" uid="uid://dehrd138hmve2" path="res://art_resource/furnitures/wardrobe/wardrobe1_close_1.png" id="1_enqb6"]
+[ext_resource type="Texture2D" uid="uid://cynudy1xouiq0" path="res://art_resource/furnitures/wardrobe/wardrobe1_close_2.png" id="2_8i4ir"]
+[ext_resource type="Texture2D" uid="uid://b3nb18t3xaauk" path="res://art_resource/furnitures/wardrobe/wardrobe1_close_3.png" id="3_gnmpo"]
+[ext_resource type="Texture2D" uid="uid://ec83udqs2a8m" path="res://art_resource/furnitures/wardrobe/wardrobe1_close_4.png" id="4_sltjs"]
+[ext_resource type="Texture2D" uid="uid://dqv7t3xn6atex" path="res://art_resource/furnitures/wardrobe/wardrobe1_open_1.png" id="5_s5kvo"]
+[ext_resource type="Texture2D" uid="uid://bblyntvpc0ef2" path="res://art_resource/furnitures/wardrobe/wardrobe1_open_2.png" id="6_v2etx"]
+[ext_resource type="Texture2D" uid="uid://cyshq0s67eo0i" path="res://art_resource/furnitures/wardrobe/wardrobe1_open_3.png" id="7_d7qvy"]
+[ext_resource type="Texture2D" uid="uid://d1ljm3g5gx4n8" path="res://art_resource/furnitures/wardrobe/wardrobe1_open_4.png" id="8_b4557"]
+[ext_resource type="Texture2D" uid="uid://cee4fgwou3vyq" path="res://art_resource/furnitures/wardrobe/wardrobe1_open_5.png" id="9_0cu8x"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="10_d6s67"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ftyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_enqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8i4ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gnmpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sltjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5kvo")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s5kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v2etx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d7qvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b4557")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0cu8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0cu8x")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v7ct"]
+size = Vector2(32, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv51t"]
+size = Vector2(32, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_junhq"]
+size = Vector2(32, 80)
+
+[node name="WardrobeFront" type="StaticBody2D"]
+script = ExtResource("1_8i4ir")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5ftyt")
+animation = &"open"
+
+[node name="ShelterBase" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 16)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23.5)
+shape = SubResource("RectangleShape2D_7v7ct")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("10_d6s67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 23.5)
+shape = SubResource("RectangleShape2D_dv51t")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_junhq")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-11, 15)

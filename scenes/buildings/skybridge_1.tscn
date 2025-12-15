@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq4q3ratrwaeo"]
+
+[ext_resource type="Texture2D" uid="uid://cn8mbc5ce66ql" path="res://art_resource/changjing/street/Skybridge1.png" id="1_urb6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yt1r"]
+size = Vector2(490, 8)
+
+[node name="Skybridge1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1345, 50)
+texture = ExtResource("1_urb6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1345, 80)
+shape = SubResource("RectangleShape2D_2yt1r")

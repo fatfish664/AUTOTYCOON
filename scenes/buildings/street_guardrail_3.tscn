@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmflsjxakhrxx"]
+
+[ext_resource type="Texture2D" uid="uid://dmcofh8n0ofn4" path="res://art_resource/changjing/street/Street guardrail3.png" id="1_x81ox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcmcy"]
+size = Vector2(40.875, 416.75)
+
+[node name="StreetGuardrail3" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1120, 300)
+texture = ExtResource("1_x81ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1119.44, 299.625)
+shape = SubResource("RectangleShape2D_fcmcy")

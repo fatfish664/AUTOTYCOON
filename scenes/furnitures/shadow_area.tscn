@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5675h5700q86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coovt"]
+size = Vector2(48, 12.5)
+
+[node name="ShadowArea" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_coovt")
+
+[node name="Positioning" type="Marker2D" parent="."]
+position = Vector2(0, -21)

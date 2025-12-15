@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://ck5mxo77kubrv"]
+
+[ext_resource type="Texture2D" uid="uid://c05ahd0jcwn06" path="res://art_resource/Fewobject/Tea table_1.png" id="1_t5ila"]
+[ext_resource type="Script" uid="uid://bdpur11xuhlb2" path="res://scripts/furniture/tea_table_1.gd" id="1_xr76q"]
+[ext_resource type="Texture2D" uid="uid://sdflrbjqxwys" path="res://art_resource/Fewobject/Tea table_1_shadow.png" id="2_ada3x"]
+[ext_resource type="Texture2D" uid="uid://d18gc2lvadjxi" path="res://art_resource/Fewobject/Tea table_1_side.png" id="3_j7440"]
+[ext_resource type="Script" uid="uid://b7ftj50m7hjuh" path="res://scripts/furniture/surface_area.gd" id="4_j7440"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="4_s6dip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6dip"]
+size = Vector2(48, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7440"]
+size = Vector2(46, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ada3x"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnjr8"]
+size = Vector2(32.2649, 8.07699)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2nb4"]
+size = Vector2(48, 32)
+
+[node name="TeaTable1" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_xr76q")
+
+[node name="TeaTable1Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("2_ada3x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_t5ila")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -1)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("3_j7440")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_s6dip")
+
+[node name="PutPlace" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("4_s6dip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_j7440")
+
+[node name="SurfaceArea" type="Area2D" parent="."]
+position = Vector2(6, 8)
+script = ExtResource("4_j7440")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SurfaceArea"]
+position = Vector2(-19, 0)
+shape = SubResource("RectangleShape2D_ada3x")
+
+[node name="SurfaceArea2" type="Area2D" parent="."]
+position = Vector2(6, 8)
+script = ExtResource("4_j7440")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SurfaceArea2"]
+position = Vector2(3.5, 0)
+rotation = -3.14159
+scale = Vector2(0.712849, -0.990468)
+shape = SubResource("RectangleShape2D_vnjr8")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, -9)
+shape = SubResource("RectangleShape2D_o2nb4")
+
+[node name="StackContainer" type="Node2D" parent="."]

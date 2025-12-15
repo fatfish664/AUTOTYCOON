@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqn2x3pj6oife"]
+
+[ext_resource type="Script" uid="uid://cdi82bvic72t5" path="res://scripts/settings.gd" id="1_x2hje"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="2_nkug2"]
+
+[node name="Settings_ui" type="CanvasLayer"]
+layer = 50
+script = ExtResource("1_x2hje")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+offset_right = 52.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_nkug2")
+theme_override_font_sizes/font_size = 12
+text = "设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 20.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+
+[node name="CloseButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

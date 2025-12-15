@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://m0cy3n0i16a0"]
+
+[ext_resource type="Texture2D" uid="uid://bsi5ywsoi0jcp" path="res://art_resource/player1_drink/refrigerator magnet_1.png" id="1_d4uto"]
+[ext_resource type="Script" uid="uid://bwowci5pc2duc" path="res://scripts/furniture/refrigerator_magnet.gd" id="1_korj8"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="3_pyt4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omsft"]
+size = Vector2(15, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bpjl"]
+size = Vector2(15, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw2so"]
+size = Vector2(16, 14)
+
+[node name="RefrigeratorMagnet1" type="StaticBody2D"]
+script = ExtResource("1_korj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d4uto")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_omsft")
+
+[node name="PutFace" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("3_pyt4j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutFace"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_2bpjl")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, -6)
+shape = SubResource("RectangleShape2D_aw2so")

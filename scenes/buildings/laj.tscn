@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://2jw0u6pu5b7v"]
+
+[ext_resource type="Texture2D" uid="uid://c0174pte7f0vo" path="res://art_resource/thing/laj.png" id="1_0c847"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlwkh"]
+radius = 8.0
+
+[node name="Laj" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0c847")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_jlwkh")
+
+[node name="Node2D" type="Node2D" parent="."]

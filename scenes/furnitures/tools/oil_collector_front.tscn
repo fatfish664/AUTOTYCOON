@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://csx21jv06p8oa"]
+
+[ext_resource type="Script" uid="uid://c2mc45ior32wn" path="res://scripts/furniture/tool/oil_collector.gd" id="1_5hsm1"]
+[ext_resource type="Texture2D" uid="uid://yemhvcj85348" path="res://art_resource/furnitures/tools/Oil collector/Oil collector_down.png" id="2_dw0pv"]
+[ext_resource type="Texture2D" uid="uid://vewo0yghwc3b" path="res://art_resource/furnitures/tools/Oil collector/Oil collector_left_down.png" id="3_a5eu7"]
+[ext_resource type="Texture2D" uid="uid://cx4mqdql3nfdp" path="res://art_resource/furnitures/tools/Oil collector/Oil collector_right_down.png" id="4_u1cyo"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="5_cdq2g"]
+[ext_resource type="Script" uid="uid://dxq4cvbxldspn" path="res://scripts/furniture/tool/taking_area.gd" id="6_5j260"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvwpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dw0pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dw0pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dw0pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a5eu7")
+}],
+"loop": false,
+"name": &"front-left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dw0pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dw0pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dw0pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u1cyo")
+}],
+"loop": false,
+"name": &"front-right",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coshp"]
+size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rqq4"]
+size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dwes"]
+size = Vector2(20, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25vki"]
+size = Vector2(18, 14.25)
+
+[node name="OilCollectorFront" type="StaticBody2D"]
+script = ExtResource("1_5hsm1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 11)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvwpd")
+animation = &"front-left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_coshp")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("5_cdq2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_4rqq4")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2dwes")
+
+[node name="TakingArea" type="Area2D" parent="."]
+script = ExtResource("6_5j260")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TakingArea"]
+position = Vector2(0, 2.125)
+shape = SubResource("RectangleShape2D_25vki")
+
+[node name="Marker2D" type="Marker2D" parent="TakingArea"]
+position = Vector2(0, -11)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(3, -26)

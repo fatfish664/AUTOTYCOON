@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://celf4rt6naclp"]
+
+[ext_resource type="Texture2D" uid="uid://dcman5lak21lw" path="res://art_resource/Store/wk.png" id="1_5tt2m"]
+[ext_resource type="Script" uid="uid://b6qksqd3qal5m" path="res://scripts/storage/inventory.gd" id="1_mrqgh"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="2_mrqgh"]
+[ext_resource type="Texture2D" uid="uid://dfnapyc4mdmpt" path="res://art_resource/Store/gb.png" id="3_dw5ng"]
+[ext_resource type="PackedScene" uid="uid://b1tafic2j6khx" path="res://scenes/storages/inventory_slot.tscn" id="5_dw5ng"]
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_mrqgh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture = ExtResource("1_5tt2m")
+
+[node name="Header" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 12.0
+
+[node name="Title" type="Label" parent="NinePatchRect/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_mrqgh")
+theme_override_font_sizes/font_size = 12
+text = "仓库库存"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButtonBackground" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 30.0
+offset_right = 42.0
+offset_bottom = 12.0
+texture = ExtResource("3_dw5ng")
+
+[node name="CloseButton" type="Button" parent="NinePatchRect"]
+layout_mode = 2
+offset_left = 30.0
+offset_right = 38.0
+offset_bottom = 12.0
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 2
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 16.0
+
+[node name="InventorySlot" parent="NinePatchRect/GridContainer" instance=ExtResource("5_dw5ng")]
+layout_mode = 2
+
+[node name="CapacityLabel" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_mrqgh")
+theme_override_font_sizes/font_size = 12
+text = "11"
+horizontal_alignment = 1
+vertical_alignment = 1

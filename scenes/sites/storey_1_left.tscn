@@ -1,0 +1,215 @@
+[gd_scene load_steps=35 format=3 uid="uid://slx0p3p1yqci"]
+
+[ext_resource type="Script" uid="uid://b5aje7qpvrc2w" path="res://scripts/site/room_editable.gd" id="1_1jfel"]
+[ext_resource type="Texture2D" uid="uid://dtix26gnxu7l8" path="res://art_resource/buildingleft_floor.png" id="1_3r1fj"]
+[ext_resource type="Script" uid="uid://bbc06mhmo2534" path="res://scripts/site/floor.gd" id="2_qekng"]
+[ext_resource type="Texture2D" uid="uid://tnmlhvkaar4j" path="res://art_resource/changjing/building_wall.png" id="3_1e5rf"]
+[ext_resource type="Script" uid="uid://qv1wcut0yceh" path="res://scripts/top.gd" id="5_qdrwv"]
+[ext_resource type="Script" uid="uid://djv1a4vxjts68" path="res://scripts/site/rdoor_1.gd" id="7_8r1s1"]
+[ext_resource type="Texture2D" uid="uid://b0snb8wys4a47" path="res://art_resource/changjing/buildingleft_eaves1.png" id="7_pxlwh"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="9_1e5rf"]
+[ext_resource type="PackedScene" uid="uid://cp60dtl4qetxf" path="res://scenes/roles/player.tscn" id="9_nmffh"]
+[ext_resource type="Script" uid="uid://bv8yfvuoips81" path="res://scripts/top_label.gd" id="10_wp6mx"]
+[ext_resource type="Texture2D" uid="uid://c43proohw7ue0" path="res://art_resource/changjing/Clocks.png" id="11_1e5rf"]
+[ext_resource type="Script" uid="uid://cis1ulb14yco1" path="res://scripts/furniture/clocks.gd" id="11_nmffh"]
+[ext_resource type="Texture2D" uid="uid://be3krjo6ubq8s" path="res://art_resource/changjing/colon.png" id="13_rfwaj"]
+[ext_resource type="Texture2D" uid="uid://47k830yfx0fr" path="res://art_resource/changjing/0.png" id="14_18msv"]
+[ext_resource type="Texture2D" uid="uid://diwm3ebn3wti0" path="res://art_resource/changjing/1.png" id="15_dhsts"]
+[ext_resource type="Texture2D" uid="uid://caxlp1srfhp1r" path="res://art_resource/changjing/2.png" id="16_s3hmi"]
+[ext_resource type="Texture2D" uid="uid://clrlvehhxkwby" path="res://art_resource/changjing/3.png" id="17_1jfel"]
+[ext_resource type="Texture2D" uid="uid://dddfqna403hn8" path="res://art_resource/changjing/switch_open.png" id="18_18msv"]
+[ext_resource type="Script" uid="uid://mf2sf2bsyiht" path="res://scripts/site/switch.gd" id="18_dhsts"]
+[ext_resource type="Script" uid="uid://bf7wu0eyb3fgg" path="res://scripts/site/storey_1_left_door.gd" id="18_s3hmi"]
+[ext_resource type="Texture2D" uid="uid://c3abph3blseyr" path="res://art_resource/changjing/switch_clos.png" id="19_dhsts"]
+[ext_resource type="Texture2D" uid="uid://buyfg78ff5u7x" path="res://art_resource/changjing/Lights_close.png" id="21_s3hmi"]
+[ext_resource type="Script" uid="uid://dgdatvblxwxw2" path="res://scripts/site/edit.gd" id="24_h3vgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdrwv"]
+size = Vector2(528, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r1s1"]
+size = Vector2(15.5, 462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo01k"]
+size = Vector2(16, 321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e5rf"]
+size = Vector2(304.5, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp6mx"]
+size = Vector2(16, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srl74"]
+size = Vector2(53.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gr6w"]
+size = Vector2(52, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxlwh"]
+size = Vector2(241.25, 56.25)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s3hmi"]
+blend_mode = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3hmi"]
+size = Vector2(14, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r1fj"]
+size = Vector2(136, 23.5)
+
+[node name="Storey1Left" type="Node2D"]
+script = ExtResource("1_1jfel")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Storey1LeftBody" type="StaticBody2D" parent="World"]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Storey1LeftBody"]
+position = Vector2(565, 55)
+texture = ExtResource("1_3r1fj")
+script = ExtResource("2_qekng")
+
+[node name="BuildingWall" type="Sprite2D" parent="World/Storey1LeftBody"]
+position = Vector2(399, -217)
+texture = ExtResource("3_1e5rf")
+script = ExtResource("2_qekng")
+
+[node name="BuildingWall2" type="Sprite2D" parent="World/Storey1LeftBody"]
+position = Vector2(575, -217)
+texture = ExtResource("3_1e5rf")
+script = ExtResource("2_qekng")
+
+[node name="BuildingWall3" type="Sprite2D" parent="World/Storey1LeftBody"]
+position = Vector2(735, -217)
+texture = ExtResource("3_1e5rf")
+script = ExtResource("2_qekng")
+
+[node name="BuildingleftEaves1" type="Sprite2D" parent="World/Storey1LeftBody"]
+position = Vector2(565, 7)
+texture = ExtResource("7_pxlwh")
+script = ExtResource("5_qdrwv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(565, -217.5)
+shape = SubResource("RectangleShape2D_qdrwv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(308.75, 38)
+shape = SubResource("RectangleShape2D_8r1s1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(821, -40.5)
+shape = SubResource("RectangleShape2D_lo01k")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(677.25, 111.75)
+shape = SubResource("RectangleShape2D_1e5rf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(533, 185)
+shape = SubResource("RectangleShape2D_wp6mx")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(326.75, 263)
+shape = SubResource("RectangleShape2D_srl74")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(515, 263)
+shape = SubResource("RectangleShape2D_2gr6w")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/Storey1LeftBody"]
+position = Vector2(420.375, 302.875)
+shape = SubResource("RectangleShape2D_pxlwh")
+
+[node name="Player" parent="World" instance=ExtResource("9_nmffh")]
+position = Vector2(425, 248)
+
+[node name="Clocks" type="Node2D" parent="World"]
+visible = false
+script = ExtResource("11_nmffh")
+
+[node name="ClockBody" type="Sprite2D" parent="World/Clocks"]
+position = Vector2(394, -234)
+texture = ExtResource("11_1e5rf")
+
+[node name="Digits" type="Node2D" parent="World/Clocks"]
+
+[node name="0" type="Sprite2D" parent="World/Clocks/Digits"]
+position = Vector2(384, -227)
+texture = ExtResource("14_18msv")
+
+[node name="1" type="Sprite2D" parent="World/Clocks/Digits"]
+position = Vector2(390, -227)
+texture = ExtResource("15_dhsts")
+
+[node name="2" type="Sprite2D" parent="World/Clocks/Digits"]
+position = Vector2(398, -227)
+texture = ExtResource("16_s3hmi")
+
+[node name="3" type="Sprite2D" parent="World/Clocks/Digits"]
+position = Vector2(404, -227)
+texture = ExtResource("17_1jfel")
+
+[node name="colon" type="Sprite2D" parent="World/Clocks/Digits"]
+position = Vector2(394, -227)
+texture = ExtResource("13_rfwaj")
+
+[node name="Switch" type="Node2D" parent="World"]
+visible = false
+script = ExtResource("18_dhsts")
+
+[node name="SwitchOpen" type="Sprite2D" parent="World/Switch"]
+position = Vector2(352, -200)
+texture = ExtResource("18_18msv")
+script = ExtResource("2_qekng")
+
+[node name="SwitchClos" type="Sprite2D" parent="World/Switch"]
+position = Vector2(352, -200)
+texture = ExtResource("19_dhsts")
+script = ExtResource("2_qekng")
+
+[node name="DarknessOverlay" type="Sprite2D" parent="World/Switch"]
+material = SubResource("CanvasItemMaterial_s3hmi")
+position = Vector2(560.5, 28)
+scale = Vector2(3.26705, 1.95092)
+texture = ExtResource("21_s3hmi")
+script = ExtResource("5_qdrwv")
+
+[node name="Area2D" type="Area2D" parent="World/Switch"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Switch/Area2D"]
+position = Vector2(352, -188)
+shape = SubResource("RectangleShape2D_s3hmi")
+
+[node name="DoorArea" type="Node2D" parent="World"]
+script = ExtResource("18_s3hmi")
+
+[node name="Rdoor1" type="Area2D" parent="World/DoorArea"]
+script = ExtResource("7_8r1s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/DoorArea/Rdoor1"]
+position = Vector2(422, 262.75)
+shape = SubResource("RectangleShape2D_3r1fj")
+
+[node name="DoorLabel1" type="Label" parent="World/DoorArea"]
+offset_left = 400.0
+offset_top = 243.0
+offset_right = 452.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("9_1e5rf")
+theme_override_font_sizes/font_size = 12
+text = "[F]离开"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_wp6mx")
+
+[node name="EditButton" type="Button" parent="."]
+offset_left = 207.0
+offset_top = -31.0
+offset_right = 265.0
+text = "annnn"
+script = ExtResource("24_h3vgp")

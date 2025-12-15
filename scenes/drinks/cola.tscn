@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgbjytdslus8t"]
+
+[ext_resource type="Script" uid="uid://b3vn1fql2sfrt" path="res://scripts/drink/cola.gd" id="1_ve21y"]
+[ext_resource type="Texture2D" uid="uid://byw3j0rdqywwu" path="res://art_resource/changjing/drinks_2.png" id="2_lhrme"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="3_5k65c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2upia"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80u2t"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3bon"]
+size = Vector2(8, 14)
+
+[node name="Cola" type="StaticBody2D"]
+script = ExtResource("1_ve21y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lhrme")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_2upia")
+
+[node name="PutPlace" type="Area2D" parent="."]
+position = Vector2(-0.5, 1)
+script = ExtResource("3_5k65c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_80u2t")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("RectangleShape2D_y3bon")

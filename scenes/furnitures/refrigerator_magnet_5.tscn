@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://lbdbmqncu6jd"]
+
+[ext_resource type="Texture2D" uid="uid://n5bgse826xsp" path="res://art_resource/player1_drink/refrigerator magnet_5.png" id="1_obm4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obm4f"]
+size = Vector2(5, 7)
+
+[node name="RefrigeratorMagnet5" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_obm4f")
+
+[node name="PutPlace" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_obm4f")

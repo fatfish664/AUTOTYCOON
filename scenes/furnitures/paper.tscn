@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bh4hudcwxsht5"]
+
+[ext_resource type="Texture2D" uid="uid://coxy14idnmo66" path="res://art_resource/Fewobject/Paper.png" id="1_dpwhn"]
+[ext_resource type="Script" uid="uid://c1m6dvir5cmmq" path="res://scripts/furniture/paper.gd" id="1_kq2bq"]
+[ext_resource type="Texture2D" uid="uid://cf2tlpvjfe6if" path="res://art_resource/Fewobject/Paper_side.png" id="3_kq2bq"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="4_rhp03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhp03"]
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5hlm"]
+size = Vector2(8, 5.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpwhn"]
+size = Vector2(25.9942, 15.7924)
+
+[node name="Paper" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_kq2bq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dpwhn")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -1)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_kq2bq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_rhp03")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("4_rhp03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 5.625)
+shape = SubResource("RectangleShape2D_h5hlm")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+scale = Vector2(0.384788, 0.8865)
+shape = SubResource("RectangleShape2D_dpwhn")

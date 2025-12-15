@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://nxcyfqprs6mt"]
+
+[ext_resource type="Texture2D" uid="uid://d1n38t0qhql0a" path="res://art_resource/workbench.png" id="1_dig1h"]
+[ext_resource type="Script" uid="uid://cjh87x5rs7vpj" path="res://scripts/workbench.gd" id="1_tkrq4"]
+[ext_resource type="Script" uid="uid://cx3d6v1hyrrt4" path="res://scripts/health_bar.gd" id="3_ihq6j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkrq4"]
+size = Vector2(45, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihq6j"]
+size = Vector2(57, 55)
+
+[node name="workbench" type="StaticBody2D"]
+script = ExtResource("1_tkrq4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dig1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_tkrq4")
+
+[node name="Interaction" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ihq6j")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -27.0
+offset_right = 22.0
+offset_bottom = -25.0
+script = ExtResource("3_ihq6j")
+
+[connection signal="area_entered" from="Interaction" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="Interaction" to="." method="_on_interaction_area_exited"]

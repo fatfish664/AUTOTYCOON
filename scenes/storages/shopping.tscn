@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://f54vqtvtxhtt"]
+
+[ext_resource type="Script" uid="uid://dr6fsjtng2lso" path="res://scripts/storage/shopping.gd" id="1_menrd"]
+[ext_resource type="Texture2D" uid="uid://dcman5lak21lw" path="res://art_resource/Store/wk.png" id="2_m0uyj"]
+[ext_resource type="PackedScene" uid="uid://6kh4d1bumtdc" path="res://scenes/storages/shop_item_slot.tscn" id="4_m0uyj"]
+[ext_resource type="Texture2D" uid="uid://dfnapyc4mdmpt" path="res://art_resource/Store/gb.png" id="6_y6oaq"]
+
+[node name="Shopping" type="CanvasLayer"]
+script = ExtResource("1_menrd")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture = ExtResource("2_m0uyj")
+
+[node name="InfoContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="NinePatchRect/InfoContainer"]
+layout_mode = 2
+
+[node name="CloseButtonBackground" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_y6oaq")
+
+[node name="CloseButton" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 483.0
+offset_right = 491.0
+offset_bottom = 8.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 896.0
+offset_bottom = 4562.0
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ShopItemSlot1" parent="NinePatchRect/ScrollContainer/GridContainer" instance=ExtResource("4_m0uyj")]
+layout_mode = 2

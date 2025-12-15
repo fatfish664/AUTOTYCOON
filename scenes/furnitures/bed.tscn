@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c03ahah1r58a8"]
+
+[ext_resource type="Script" uid="uid://csk2wolpq3vyg" path="res://scripts/furniture/bed.gd" id="1_2rykw"]
+[ext_resource type="Texture2D" uid="uid://dxxthfbiloxip" path="res://art_resource/changjing/bed.png" id="2_2rykw"]
+[ext_resource type="Script" uid="uid://bsmgh2utlehd4" path="res://scripts/ub_draggable.gd" id="3_2rykw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqjo8"]
+size = Vector2(63, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtpq8"]
+size = Vector2(63, 87)
+
+[node name="Bed" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_2rykw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2rykw")
+script = ExtResource("3_2rykw")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_xqjo8")
+
+[node name="PutPlace" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(-0.5, 11.5)
+shape = SubResource("RectangleShape2D_gtpq8")

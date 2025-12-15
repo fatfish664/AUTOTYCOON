@@ -1,0 +1,91 @@
+[gd_scene load_steps=16 format=3 uid="uid://c8q2r4busb5sn"]
+
+[ext_resource type="Texture2D" uid="uid://b7prlsvcaq7c4" path="res://art_resource/ck/Shelves1_shadow.png" id="1_3qwy3"]
+[ext_resource type="Script" uid="uid://3i6grw5tmn06" path="res://scripts/furniture/shelves_1.gd" id="1_ksljh"]
+[ext_resource type="Texture2D" uid="uid://cuydddtvob7ab" path="res://art_resource/ck/Shelves1.png" id="2_rlgr6"]
+[ext_resource type="Texture2D" uid="uid://cwesqkqtvllq8" path="res://art_resource/ck/Shelves1_side.png" id="3_ksljh"]
+[ext_resource type="Texture2D" uid="uid://djrg8h8ty524t" path="res://art_resource/ck/Shelves1_1.png" id="4_r140j"]
+[ext_resource type="Texture2D" uid="uid://hr6dhbopdp50" path="res://art_resource/ck/Shelves1_2.png" id="5_046e1"]
+[ext_resource type="Texture2D" uid="uid://cglm27imopiff" path="res://art_resource/ck/Shelves1_3.png" id="6_h5rfb"]
+[ext_resource type="Texture2D" uid="uid://y53ervasnj5k" path="res://art_resource/ck/Shelves1_4.png" id="7_ppgtg"]
+[ext_resource type="Texture2D" uid="uid://saxu05pabrtb" path="res://art_resource/ck/Shelves1_5.png" id="8_4cvcs"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="10_r140j"]
+[ext_resource type="Script" uid="uid://dx3yu72vy7qdw" path="res://scripts/furniture/depot_area.gd" id="11_r140j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjkcq"]
+size = Vector2(94, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_046e1"]
+size = Vector2(94, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5rfb"]
+size = Vector2(96, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgtg"]
+size = Vector2(110, 28)
+
+[node name="Shelves1" type="StaticBody2D"]
+script = ExtResource("1_ksljh")
+
+[node name="Shelves1Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 37)
+texture = ExtResource("1_3qwy3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rlgr6")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 10)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_ksljh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23.5)
+shape = SubResource("RectangleShape2D_bjkcq")
+
+[node name="Shelves11" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("4_r140j")
+
+[node name="Shelves12" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("5_046e1")
+
+[node name="Shelves13" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("6_h5rfb")
+
+[node name="Shelves14" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("7_ppgtg")
+
+[node name="Shelves15" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("8_4cvcs")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("10_r140j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 23.5)
+shape = SubResource("RectangleShape2D_046e1")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, -6)
+shape = SubResource("RectangleShape2D_h5rfb")
+
+[node name="depotArea" type="Area2D" parent="."]
+script = ExtResource("11_r140j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="depotArea"]
+position = Vector2(0, 35)
+shape = SubResource("RectangleShape2D_ppgtg")

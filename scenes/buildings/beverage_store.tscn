@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://3oyfsp424twb"]
+
+[ext_resource type="Texture2D" uid="uid://ddvvn1k0wjb4t" path="res://art_resource/changjing/Beverage Store.png" id="1_g16a3"]
+[ext_resource type="Script" uid="uid://bsmgh2utlehd4" path="res://scripts/ub_draggable.gd" id="2_ttjb0"]
+[ext_resource type="Script" uid="uid://cxejq33plcqsu" path="res://scripts/building/store_area.gd" id="3_ttjb0"]
+[ext_resource type="Script" uid="uid://b4cdheulw6sae" path="res://scripts/building/open_store.gd" id="4_q3loh"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="5_kwwbb"]
+[ext_resource type="Script" uid="uid://bv8yfvuoips81" path="res://scripts/top_label.gd" id="6_evlx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpvse"]
+size = Vector2(60, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkd07"]
+size = Vector2(72, 46)
+
+[node name="BeverageStore" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g16a3")
+script = ExtResource("2_ttjb0")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_wpvse")
+
+[node name="StoreArea" type="Node2D" parent="."]
+script = ExtResource("3_ttjb0")
+
+[node name="Area2D" type="Area2D" parent="StoreArea"]
+script = ExtResource("4_q3loh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreArea/Area2D"]
+position = Vector2(0, 34)
+shape = SubResource("RectangleShape2D_rkd07")
+
+[node name="StoreLabel" type="Label" parent="StoreArea"]
+offset_left = -33.0
+offset_top = -4.0
+offset_right = 34.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_kwwbb")
+theme_override_font_sizes/font_size = 12
+text = "[F]打开商店"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_evlx4")

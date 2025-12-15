@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1tafic2j6khx"]
+
+[ext_resource type="Script" uid="uid://dt1657dia5t2r" path="res://scripts/storage/inventory_slot.gd" id="1_75pi0"]
+[ext_resource type="Texture2D" uid="uid://bpeejfche0qqa" path="res://art_resource/changjing/item.png" id="1_bfyh4"]
+[ext_resource type="Texture2D" uid="uid://dv2mahkncail2" path="res://art_resource/changjing/g.png" id="2_75pi0"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="3_rhcms"]
+
+[node name="InventorySlot" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_75pi0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_bfyh4")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Highlight" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_75pi0")
+
+[node name="CountLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_rhcms")
+theme_override_font_sizes/font_size = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2

@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=3 uid="uid://7ha86q8bby7h"]
+
+[ext_resource type="Script" uid="uid://cfom6nwv8y5ql" path="res://scripts/site/street.gd" id="1_c8o6y"]
+[ext_resource type="PackedScene" uid="uid://cqn2x3pj6oife" path="res://scenes/settings.tscn" id="2_d542b"]
+[ext_resource type="PackedScene" uid="uid://f54vqtvtxhtt" path="res://scenes/storages/shopping.tscn" id="3_lwduh"]
+[ext_resource type="Texture2D" uid="uid://ch7pp82vwbp8l" path="res://art_resource/changjing/street/Street Scene.png" id="4_a3qam"]
+[ext_resource type="Script" uid="uid://durjmaww1nqmc" path="res://scripts/site/street_scene.gd" id="5_raqmc"]
+[ext_resource type="PackedScene" uid="uid://dmr7pl75hdmar" path="res://scenes/buildings/street_lights.tscn" id="6_lkb4w"]
+[ext_resource type="PackedScene" uid="uid://cmflsjxakhrxx" path="res://scenes/buildings/street_guardrail_3.tscn" id="7_lhd20"]
+[ext_resource type="PackedScene" uid="uid://biqws8jexr2u" path="res://scenes/buildings/traffic_light.tscn" id="8_o0x4c"]
+[ext_resource type="PackedScene" uid="uid://66gkv2fb1l0x" path="res://scenes/buildings/street_guardrail_1.tscn" id="9_r03a4"]
+[ext_resource type="PackedScene" uid="uid://sx3s3p68jr61" path="res://scenes/buildings/skybridge_2.tscn" id="10_r8r5c"]
+[ext_resource type="PackedScene" uid="uid://cq4q3ratrwaeo" path="res://scenes/buildings/skybridge_1.tscn" id="11_uevud"]
+[ext_resource type="PackedScene" uid="uid://3oyfsp424twb" path="res://scenes/buildings/beverage_store.tscn" id="12_5ttq1"]
+[ext_resource type="PackedScene" uid="uid://c1wyly4wi70af" path="res://scenes/buildings/repair_shop.tscn" id="13_uehvm"]
+[ext_resource type="Script" uid="uid://dnxwik382i6tv" path="res://scripts/site/night_control.gd" id="14_snsbr"]
+[ext_resource type="Script" uid="uid://deymvrdrul8wf" path="res://scripts/site/drop_receiver.gd" id="15_3ku2r"]
+[ext_resource type="PackedScene" uid="uid://cp60dtl4qetxf" path="res://scenes/roles/player.tscn" id="16_3ptpd"]
+
+[node name="Street" type="Node2D"]
+script = ExtResource("1_c8o6y")
+
+[node name="Settings" parent="." instance=ExtResource("2_d542b")]
+
+[node name="Shopping" parent="." instance=ExtResource("3_lwduh")]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="StreetScene" type="Sprite2D" parent="World"]
+position = Vector2(220, 285)
+texture = ExtResource("4_a3qam")
+script = ExtResource("5_raqmc")
+
+[node name="StreetLights" parent="World" instance=ExtResource("6_lkb4w")]
+
+[node name="StreetGuardrail3" parent="World" instance=ExtResource("7_lhd20")]
+
+[node name="TrafficLight" parent="World" instance=ExtResource("8_o0x4c")]
+
+[node name="StreetGuardrail1" parent="World" instance=ExtResource("9_r03a4")]
+position = Vector2(0, -1)
+
+[node name="Skybridge2" parent="World" instance=ExtResource("10_r8r5c")]
+
+[node name="Skybridge1" parent="World" instance=ExtResource("11_uevud")]
+
+[node name="BeverageStore" parent="World" instance=ExtResource("12_5ttq1")]
+position = Vector2(-66, 320)
+
+[node name="Player" parent="World" instance=ExtResource("16_3ptpd")]
+
+[node name="RepairShop" parent="World" instance=ExtResource("13_uehvm")]
+
+[node name="SpawnPoints" type="Node2D" parent="World"]
+position = Vector2(-112, 260)
+
+[node name="rdoor1_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(291, 89)
+
+[node name="rdoor2_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(482, 89)
+
+[node name="rdoor3_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(669, 89)
+
+[node name="rdoor4_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(362, -80)
+
+[node name="NightControl" type="Node" parent="World"]
+script = ExtResource("14_snsbr")
+
+[node name="DarknessOverlay" type="ColorRect" parent="World/NightControl"]
+visible = false
+z_index = 2100
+offset_left = -1170.0
+offset_top = -472.0
+offset_right = 1778.0
+offset_bottom = 1139.0
+color = Color(0, 0, 0, 0.866667)
+
+[node name="DropReceiver" type="Control" parent="World"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2057.0
+offset_top = -843.0
+offset_right = 2678.0
+offset_bottom = 1747.0
+script = ExtResource("15_3ku2r")

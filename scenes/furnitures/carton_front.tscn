@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgcldmo4u8wlp"]
+
+[ext_resource type="Texture2D" uid="uid://ca03lg1koeund" path="res://art_resource/Fewobject/carton_up.png" id="1_bx4fx"]
+[ext_resource type="Script" uid="uid://dq1gyef8k3tob" path="res://scripts/furniture/carton.gd" id="1_n4ble"]
+[ext_resource type="Texture2D" uid="uid://didnxxgtlav72" path="res://art_resource/Fewobject/carton_up_side.png" id="2_n4ble"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="3_jfmfk"]
+[ext_resource type="Script" uid="uid://b7ftj50m7hjuh" path="res://scripts/furniture/surface_area.gd" id="4_8natf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7uf1"]
+size = Vector2(22, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6rmy"]
+size = Vector2(22, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mgid"]
+size = Vector2(22, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3q4l"]
+size = Vector2(24, 40)
+
+[node name="CartonFront" type="StaticBody2D"]
+script = ExtResource("1_n4ble")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bx4fx")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_n4ble")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_c7uf1")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("3_jfmfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_b6rmy")
+
+[node name="SurfaceArea" type="Area2D" parent="."]
+script = ExtResource("4_8natf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SurfaceArea"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_8mgid")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("RectangleShape2D_x3q4l")
+
+[node name="StackContainer" type="Node2D" parent="."]

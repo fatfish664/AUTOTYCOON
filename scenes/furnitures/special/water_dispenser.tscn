@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4ns5qqxqvrhk"]
+
+[ext_resource type="Texture2D" uid="uid://1c2mb6fo0ql6" path="res://art_resource/player1_drink/Water dispenser.png" id="1_0ii5d"]
+[ext_resource type="Script" uid="uid://cr7ipwfy8jttj" path="res://scripts/furniture/water_dispenser.gd" id="1_bcj6a"]
+[ext_resource type="Texture2D" uid="uid://dyrqgcoye0y6f" path="res://art_resource/player1_drink/Water dispenser_side.png" id="2_bcj6a"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="3_bqeu7"]
+[ext_resource type="Script" uid="uid://bp3hyiujt5dda" path="res://scripts/furniture/drink_area.gd" id="5_bqeu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x35s8"]
+size = Vector2(22, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vcc0"]
+size = Vector2(22, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhuun"]
+size = Vector2(22, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1mqy"]
+size = Vector2(13, 9.125)
+
+[node name="WaterDispenser" type="StaticBody2D"]
+script = ExtResource("1_bcj6a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0ii5d")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 15)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_bcj6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22.5)
+shape = SubResource("RectangleShape2D_x35s8")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("3_bqeu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 22.5)
+shape = SubResource("RectangleShape2D_4vcc0")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_hhuun")
+
+[node name="DrinkArea" type="Area2D" parent="."]
+script = ExtResource("5_bqeu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkArea"]
+position = Vector2(-7, 33)
+shape = SubResource("RectangleShape2D_o1mqy")
+
+[node name="DrinkPlace" type="Marker2D" parent="DrinkArea"]
+position = Vector2(-14, 13)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-14, 10)

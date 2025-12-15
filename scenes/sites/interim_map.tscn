@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://byv4kffmyi1og"]
+
+[ext_resource type="Texture2D" uid="uid://ni25vxopetvp" path="res://art_resource/interim_map.png" id="1_lmshh"]
+[ext_resource type="PackedScene" uid="uid://cp60dtl4qetxf" path="res://scenes/roles/player.tscn" id="2_gkj53"]
+[ext_resource type="PackedScene" uid="uid://nxcyfqprs6mt" path="res://scenes/workbench.tscn" id="2_neb1w"]
+[ext_resource type="PackedScene" uid="uid://bc3tubdxvhwc8" path="res://scenes/roles/npc.tscn" id="4_neb1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmshh"]
+size = Vector2(1184, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkj53"]
+size = Vector2(188, 568)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_neb1w"]
+size = Vector2(1160, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uadud"]
+size = Vector2(261.5, 648)
+
+[node name="TileMap" type="TileMap" groups=["player", "repairable"]]
+format = 2
+
+[node name="InterimMap" type="Sprite2D" parent="."]
+position = Vector2(-74, -19)
+texture = ExtResource("1_lmshh")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="InterimMap"]
+position = Vector2(-1, -6)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InterimMap/StaticBody2D"]
+polygon = PackedVector2Array(450, -394, 714, -394, 714, -202, 962, -202, 962, -538, 450, -538)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="InterimMap/StaticBody2D"]
+polygon = PackedVector2Array(-451, -540, -451, -404, -715, -404, -715, -204, -963, -204, -963, -540, -451, -540)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="InterimMap/StaticBody2D"]
+polygon = PackedVector2Array(-963, 204, -715, 204, -715, 396, -451, 396, -451, 540, -963, 540)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="InterimMap/StaticBody2D"]
+polygon = PackedVector2Array(453, 396, 453, 540, 957, 540, 957, 212, 717, 212, 717, 396)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterimMap/StaticBody2D"]
+position = Vector2(27, 616)
+shape = SubResource("RectangleShape2D_lmshh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InterimMap/StaticBody2D"]
+position = Vector2(1053, 32)
+shape = SubResource("RectangleShape2D_gkj53")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="InterimMap/StaticBody2D"]
+position = Vector2(15, -625.5)
+shape = SubResource("RectangleShape2D_neb1w")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="InterimMap/StaticBody2D"]
+position = Vector2(-1090.25, 8)
+shape = SubResource("RectangleShape2D_uadud")
+
+[node name="Player" parent="." instance=ExtResource("2_gkj53")]
+position = Vector2(-171, -86)
+
+[node name="workbench" parent="." instance=ExtResource("2_neb1w")]
+position = Vector2(114, 88)
+
+[node name="NPC" parent="." instance=ExtResource("4_neb1w")]
+position = Vector2(74, 44)

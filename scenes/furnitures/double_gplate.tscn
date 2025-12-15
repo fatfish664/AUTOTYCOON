@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://cd5pepk7xiaaq"]
+
+[ext_resource type="Script" uid="uid://ckd1so6tuphli" path="res://scripts/furniture/double_gplate.gd" id="1_ag7p3"]
+[ext_resource type="Texture2D" uid="uid://c7ildgwop6kcd" path="res://art_resource/Fewobject/Glass plate_pile up.png" id="1_gv08x"]
+[ext_resource type="Texture2D" uid="uid://cnsqolxhgwev0" path="res://art_resource/Fewobject/Glass plate_pile up_side.png" id="3_6jc62"]
+[ext_resource type="Texture2D" uid="uid://b56wv7dnx8nj" path="res://art_resource/Fewobject/Glass plate_side.png" id="4_6jc62"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="5_v8od0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ntjm"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8od0"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0oqd"]
+size = Vector2(31.186, 21.4326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8tvv"]
+size = Vector2(8, 8)
+
+[node name="DoubleGplate" type="StaticBody2D"]
+script = ExtResource("1_ag7p3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gv08x")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 2)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_6jc62")
+
+[node name="GplateSide" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("4_6jc62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0ntjm")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("5_v8od0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v8od0")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(2.84217e-14, -0.5)
+scale = Vector2(0.384788, 0.8865)
+shape = SubResource("RectangleShape2D_d0oqd")
+
+[node name="UpperClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperClickArea"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_o8tvv")
+
+[node name="Positioning" type="Marker2D" parent="."]
+position = Vector2(0, 9)

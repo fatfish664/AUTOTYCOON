@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=3 uid="uid://gx1hdgeftaan"]
+
+[ext_resource type="Texture2D" uid="uid://dfn6fcd3jmw3y" path="res://art_resource/relaxing_item/Pit1_left_havecar.png" id="1_eo1fa"]
+[ext_resource type="Script" uid="uid://b6qpj616w0w6l" path="res://scripts/furniture/work_place.gd" id="1_s8e2m"]
+[ext_resource type="Texture2D" uid="uid://dgvhgb0jpfqfe" path="res://art_resource/relaxing_item/Pit1_left_havecar_2.png" id="2_s8e2m"]
+[ext_resource type="Texture2D" uid="uid://tkxc24sfch2d" path="res://art_resource/relaxing_item/car_shadow.png" id="3_vdru8"]
+[ext_resource type="Texture2D" uid="uid://bkxw27vajsjhc" path="res://art_resource/relaxing_item/car_tire.png" id="4_kyjul"]
+[ext_resource type="Texture2D" uid="uid://bvoa7sn6gxdlc" path="res://art_resource/relaxing_item/car1.png" id="5_5l3da"]
+[ext_resource type="Texture2D" uid="uid://d3ndclxheinc8" path="res://art_resource/relaxing_item/Pit1_left_1.png" id="6_f6x1i"]
+[ext_resource type="Texture2D" uid="uid://chqg8jer8s273" path="res://art_resource/relaxing_item/Pit1_left_nocar.png" id="7_nunav"]
+[ext_resource type="Texture2D" uid="uid://cirmoquha5xal" path="res://art_resource/relaxing_item/Pit1_left_side.png" id="8_mn6rp"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="9_bqsde"]
+[ext_resource type="Script" uid="uid://c4prukiom01kv" path="res://scripts/furniture/work_area.gd" id="11_vdru8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8e2m"]
+size = Vector2(16, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdru8"]
+size = Vector2(16, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy56d"]
+size = Vector2(200, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh04x"]
+size = Vector2(208, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhp3m"]
+size = Vector2(210, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyjul"]
+
+[node name="WorkPlace" type="StaticBody2D"]
+script = ExtResource("1_s8e2m")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eo1fa")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -10)
+
+[node name="Pit1LeftHavecar" type="Sprite2D" parent="."]
+position = Vector2(0, 17)
+texture = ExtResource("2_s8e2m")
+
+[node name="CarShadow" type="Sprite2D" parent="."]
+position = Vector2(-1, 18)
+texture = ExtResource("3_vdru8")
+
+[node name="CarTire" type="Sprite2D" parent="."]
+position = Vector2(68, 36)
+texture = ExtResource("4_kyjul")
+
+[node name="CarTire2" type="Sprite2D" parent="."]
+position = Vector2(-48, 36)
+texture = ExtResource("4_kyjul")
+
+[node name="Car1" type="Sprite2D" parent="."]
+texture = ExtResource("5_5l3da")
+
+[node name="Pit1LeftNocar" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_nunav")
+
+[node name="Pit1Left1" type="Sprite2D" parent="."]
+position = Vector2(0.5, 34.5)
+texture = ExtResource("6_f6x1i")
+
+[node name="ShelterBase" type="Marker2D" parent="Pit1Left1"]
+position = Vector2(-0.5, 22.5)
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("8_mn6rp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_s8e2m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 53.5)
+shape = SubResource("RectangleShape2D_vdru8")
+
+[node name="CarCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 28.5)
+shape = SubResource("RectangleShape2D_jy56d")
+
+[node name="PutPlace" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("9_bqsde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 46)
+shape = SubResource("RectangleShape2D_yh04x")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, 24)
+shape = SubResource("RectangleShape2D_uhp3m")
+
+[node name="WorkArea" type="Area2D" parent="."]
+script = ExtResource("11_vdru8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkArea"]
+position = Vector2(6, 67)
+shape = SubResource("RectangleShape2D_kyjul")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(12, 56)

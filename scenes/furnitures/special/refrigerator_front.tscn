@@ -1,0 +1,279 @@
+[gd_scene load_steps=20 format=3 uid="uid://dl6spyy6aniyh"]
+
+[ext_resource type="Script" uid="uid://p1fy1iks6iok" path="res://scripts/furniture/refrigerator.gd" id="1_yfcsj"]
+[ext_resource type="Texture2D" uid="uid://vw08wy2wmkn5" path="res://art_resource/player1_drink/Refrigerator_side.png" id="3_3pfq4"]
+[ext_resource type="Texture2D" uid="uid://cg6csll02mbb6" path="res://art_resource/furnitures/fridge/fridge1_front_1.png" id="3_m3406"]
+[ext_resource type="Texture2D" uid="uid://bdlphildydoli" path="res://art_resource/furnitures/fridge/fridge1_front.png" id="3_ysb1y"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="4_8pkxu"]
+[ext_resource type="Texture2D" uid="uid://cdxufx6rkeyo7" path="res://art_resource/furnitures/fridge/fridge1_front_2.png" id="4_kh050"]
+[ext_resource type="Texture2D" uid="uid://ds57ktx1rpb7s" path="res://art_resource/furnitures/fridge/fridge1_front_3.png" id="5_2aw0f"]
+[ext_resource type="Script" uid="uid://deipshqiebjuf" path="res://scripts/furniture/refrigerator_area.gd" id="6_3pfq4"]
+[ext_resource type="Texture2D" uid="uid://ciqnb3bxug2rx" path="res://art_resource/furnitures/fridge/fridge1_front_none_1.png" id="6_qcbqw"]
+[ext_resource type="Texture2D" uid="uid://bpsj7f1itqanq" path="res://art_resource/furnitures/fridge/fridge1_front_none_2.png" id="7_0qkja"]
+[ext_resource type="Script" uid="uid://bbd32e2t16ylc" path="res://scripts/furniture/refrigertor_face.gd" id="7_8pkxu"]
+[ext_resource type="Texture2D" uid="uid://5hrqbevcl3x2" path="res://art_resource/furnitures/fridge/fridge1_front_none_3.png" id="8_8am21"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvace"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m3406")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kh050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2aw0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kh050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m3406")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qcbqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0qkja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8am21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0qkja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qcbqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ysb1y")
+}],
+"loop": false,
+"name": &"open_none",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1hxj"]
+size = Vector2(36, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an7fl"]
+size = Vector2(36, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lto3m"]
+size = Vector2(36, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud18i"]
+size = Vector2(21, 9.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pfq4"]
+size = Vector2(32, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pkxu"]
+size = Vector2(32, 18)
+
+[node name="RefrigeratorFront" type="StaticBody2D"]
+script = ExtResource("1_yfcsj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ysb1y")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, 15)
+
+[node name="RefrigeratorOpen" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bvace")
+animation = &"open"
+frame = 27
+frame_progress = 1.0
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_3pfq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24.5)
+shape = SubResource("RectangleShape2D_n1hxj")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("4_8pkxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 24.5)
+shape = SubResource("RectangleShape2D_an7fl")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("RectangleShape2D_lto3m")
+
+[node name="RefrigeratorArea" type="Area2D" parent="."]
+script = ExtResource("6_3pfq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RefrigeratorArea"]
+position = Vector2(-16.5, 36)
+shape = SubResource("RectangleShape2D_ud18i")
+
+[node name="RefrigertorFace1" type="Area2D" parent="."]
+script = ExtResource("7_8pkxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RefrigertorFace1"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_3pfq4")
+
+[node name="Marker2D" type="Marker2D" parent="RefrigertorFace1"]
+position = Vector2(0, 16)
+
+[node name="RefrigertorFace2" type="Area2D" parent="."]
+script = ExtResource("7_8pkxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RefrigertorFace2"]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_8pkxu")
+
+[node name="Marker2D" type="Marker2D" parent="RefrigertorFace2"]
+position = Vector2(0, 16)
+
+[node name="StackContainer" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-21, 15)

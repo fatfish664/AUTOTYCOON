@@ -1,0 +1,458 @@
+[gd_scene load_steps=69 format=3 uid="uid://1txf41gury6d"]
+
+[ext_resource type="Script" uid="uid://b5aje7qpvrc2w" path="res://scripts/site/room_editable.gd" id="1_u0hvb"]
+[ext_resource type="PackedScene" uid="uid://celf4rt6naclp" path="res://scenes/storages/inventory.tscn" id="2_m1okd"]
+[ext_resource type="PackedScene" uid="uid://btejca4ouweu3" path="res://scenes/storages/refrigerator_inventory.tscn" id="3_y3s7k"]
+[ext_resource type="Texture2D" uid="uid://c7a5lmaj2ealo" path="res://art_resource/changjing/building_floor.png" id="4_aybse"]
+[ext_resource type="Script" uid="uid://bbc06mhmo2534" path="res://scripts/site/floor.gd" id="5_xakxk"]
+[ext_resource type="Texture2D" uid="uid://cofs5yyyhdb37" path="res://art_resource/changjing/building_iron wall1.png" id="6_aqate"]
+[ext_resource type="Texture2D" uid="uid://bjjsrw7ovhjbb" path="res://art_resource/changjing/building_wall_door.png" id="7_li5nq"]
+[ext_resource type="Script" uid="uid://bsmgh2utlehd4" path="res://scripts/ub_draggable.gd" id="8_dkehq"]
+[ext_resource type="Texture2D" uid="uid://tnmlhvkaar4j" path="res://art_resource/changjing/building_wall.png" id="9_11qdf"]
+[ext_resource type="Texture2D" uid="uid://cucjje77lu6tf" path="res://art_resource/changjing/building_wall0.png" id="10_2v08j"]
+[ext_resource type="Texture2D" uid="uid://ckfpaq05bagk" path="res://art_resource/changjing/building_steel frame.png" id="11_fo84g"]
+[ext_resource type="Texture2D" uid="uid://x1v0yyk5l2fk" path="res://art_resource/changjing/building_steel frame_door.png" id="12_lsvx0"]
+[ext_resource type="Texture2D" uid="uid://dgludpkb665ea" path="res://art_resource/changjing/building_steel frame_eaves.png" id="13_7ca4v"]
+[ext_resource type="Script" uid="uid://qv1wcut0yceh" path="res://scripts/top.gd" id="14_cdhaf"]
+[ext_resource type="Texture2D" uid="uid://w8qxbvx27uuh" path="res://art_resource/changjing/building2nd_steel frame.png" id="15_xaaui"]
+[ext_resource type="Texture2D" uid="uid://cmrowm2xmmc1d" path="res://art_resource/changjing/Stairs_1.png" id="16_6r7cw"]
+[ext_resource type="Texture2D" uid="uid://drh2gyngr6s5y" path="res://art_resource/changjing/Stairs.png" id="17_rcic7"]
+[ext_resource type="Texture2D" uid="uid://bu1wvorjt6vsd" path="res://art_resource/changjing/building_eaves1_1.png" id="18_sa86r"]
+[ext_resource type="Texture2D" uid="uid://6bkb0yfhwfs1" path="res://art_resource/changjing/building_eaves1_2.png" id="19_n3o2l"]
+[ext_resource type="PackedScene" uid="uid://cp60dtl4qetxf" path="res://scenes/roles/player.tscn" id="20_pohu6"]
+[ext_resource type="Script" uid="uid://c1boytlu60ww3" path="res://scripts/site/in_door.gd" id="21_57aay"]
+[ext_resource type="Texture2D" uid="uid://cb1bhnc6oqh5e" path="res://art_resource/changjing/building_door_open.png" id="22_h7flu"]
+[ext_resource type="Texture2D" uid="uid://dqihk70arby2n" path="res://art_resource/changjing/building_door.png" id="23_ysal1"]
+[ext_resource type="Script" uid="uid://b2qwhsw7sswm6" path="res://scripts/site/rdoor_2.gd" id="24_curnv"]
+[ext_resource type="Script" uid="uid://bml8g1g3f25g7" path="res://scripts/site/rdoor_3.gd" id="25_al8ot"]
+[ext_resource type="Script" uid="uid://biulsn6i1kq0p" path="res://scripts/site/rstorey.gd" id="26_1cvmh"]
+[ext_resource type="Script" uid="uid://dnxwik382i6tv" path="res://scripts/site/night_control.gd" id="27_mmda6"]
+[ext_resource type="Script" uid="uid://ddt8j0ook6fkg" path="res://scripts/site/placeable_floor.gd" id="28_g6duv"]
+[ext_resource type="Script" uid="uid://uuwoljjqocbm" path="res://scripts/site/placeable_wall.gd" id="29_7sh4p"]
+[ext_resource type="Script" uid="uid://dgdatvblxwxw2" path="res://scripts/site/edit.gd" id="30_mrhlm"]
+[ext_resource type="PackedScene" uid="uid://desw5tl53f2w6" path="res://scenes/furnitures/special/car_lift.tscn" id="32_8pmn1"]
+[ext_resource type="PackedScene" uid="uid://bylu6827t4jad" path="res://scenes/cars/car_1.tscn" id="32_64imm"]
+[ext_resource type="PackedScene" uid="uid://dq5sqnshxhua6" path="res://scenes/furnitures/special/car_lift_1_switch_front.tscn" id="34_bia7l"]
+[ext_resource type="PackedScene" uid="uid://d1gir13h2455q" path="res://scenes/furnitures/wardrobe_front.tscn" id="35_3grtd"]
+[ext_resource type="PackedScene" uid="uid://dtll5w6dkwojy" path="res://scenes/grid_visualizer.tscn" id="35_n77n3"]
+[ext_resource type="PackedScene" uid="uid://csx21jv06p8oa" path="res://scenes/furnitures/tools/oil_collector_front.tscn" id="36_n77n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gay7e"]
+size = Vector2(798, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7kw1"]
+size = Vector2(16, 548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw8qo"]
+size = Vector2(85, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mcpw"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eveh5"]
+size = Vector2(4, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc5qw"]
+size = Vector2(280, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rxpc"]
+size = Vector2(49, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyheg"]
+size = Vector2(14, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ontsk"]
+size = Vector2(16, 238)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av7hr"]
+size = Vector2(306, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0m4f"]
+size = Vector2(98, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbixk"]
+size = Vector2(23, 280)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltwd0"]
+size = Vector2(65, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7qoh"]
+size = Vector2(88, 548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ok8d"]
+size = Vector2(53.5, 100.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dic0b"]
+radius = 26.0768
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0k3y"]
+radius = 37.0135
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkyft"]
+radius = 50.9902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqhpr"]
+radius = 29.2746
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dic0b"]
+size = Vector2(722, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0k3y"]
+size = Vector2(16.5, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkyft"]
+size = Vector2(52, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqhpr"]
+size = Vector2(48, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scw1n"]
+size = Vector2(63, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdf2l"]
+size = Vector2(79, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu23b"]
+size = Vector2(220, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lht3b"]
+size = Vector2(27.5, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kfcg"]
+size = Vector2(177, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akhf8"]
+size = Vector2(407.5, 420.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lksjn"]
+size = Vector2(370.5, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7scco"]
+size = Vector2(178, 56)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lksjn"]
+vertices = PackedVector2Array(460.211, 108.117, 463.773, 274.867, 323.648, 273.109, 321.391, 209.008, 318.813, 144, 317.406, 109.867, 1006.11, -128.953, 1010.88, 282.008, 516.258, 282.977, 621.094, 107, 619.078, -127.039, 562.75, 107, 523.141, 15.7734, 568.742, -132.891, 495.031, -3.15625, 300.367, -130.25, 296.43, -118.953, 211, -5.07031, 233, -39, 241.906, -123.258, 199.07, -39, 200.906, 234.656, 211, 144)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0), PackedInt32Array(4, 0, 3), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 10, 6), PackedInt32Array(11, 9, 8), PackedInt32Array(11, 8, 12, 13), PackedInt32Array(13, 12, 14), PackedInt32Array(15, 13, 14, 16), PackedInt32Array(16, 14, 17, 18), PackedInt32Array(18, 19, 16), PackedInt32Array(20, 18, 17), PackedInt32Array(21, 20, 17, 22), PackedInt32Array(3, 21, 22, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1016, -139, 1021, 292, 506, 293, 513, 21, 274, -140, 579, -143, 573, 97, 611, 97, 609, -137), PackedVector2Array(518, 7, 221, 5, 221, 134, 330, 134, 346, 214, 191, 247, 189, -49, 224, -49, 233, -134, 309, -128), PackedVector2Array(307, 100, 470, 98, 474, 285, 314, 283, 311, 198)])
+
+[node name="Storey1" type="Node2D"]
+script = ExtResource("1_u0hvb")
+
+[node name="Inventory" parent="." instance=ExtResource("2_m1okd")]
+
+[node name="RefrigeratorInventory" parent="." instance=ExtResource("3_y3s7k")]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Storey1Body" type="StaticBody2D" parent="World"]
+
+[node name="BuildingFloor" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(580, 90)
+texture = ExtResource("4_aybse")
+script = ExtResource("5_xakxk")
+
+[node name="BuildingIronWall1" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(370, -185)
+texture = ExtResource("6_aqate")
+script = ExtResource("5_xakxk")
+
+[node name="BuildingIronWall2" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(775, -185)
+texture = ExtResource("6_aqate")
+script = ExtResource("5_xakxk")
+
+[node name="BuildingWallDoor" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(227, 50)
+texture = ExtResource("7_li5nq")
+script = ExtResource("8_dkehq")
+
+[node name="ShelterBase" type="Marker2D" parent="World/Storey1Body/BuildingWallDoor"]
+position = Vector2(-17, 32)
+
+[node name="BuildingWall" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(387, 50)
+texture = ExtResource("9_11qdf")
+script = ExtResource("8_dkehq")
+
+[node name="ShelterBase" type="Marker2D" parent="World/Storey1Body/BuildingWall"]
+position = Vector2(-15, 32)
+
+[node name="BuildingWall0" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(291, 67)
+texture = ExtResource("10_2v08j")
+script = ExtResource("8_dkehq")
+
+[node name="ShelterBase" type="Marker2D" parent="World/Storey1Body/BuildingWall0"]
+position = Vector2(0, 16)
+
+[node name="BuildingSteelFrame" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(571, -70)
+texture = ExtResource("11_fo84g")
+script = ExtResource("5_xakxk")
+
+[node name="BuildingSteelFrameDoor" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(538, 50)
+texture = ExtResource("12_lsvx0")
+script = ExtResource("8_dkehq")
+
+[node name="ShelterBase" type="Marker2D" parent="World/Storey1Body/BuildingSteelFrameDoor"]
+position = Vector2(-17, 32)
+
+[node name="BuildingSteelFrameEaves" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(593, -94)
+texture = ExtResource("13_7ca4v")
+script = ExtResource("14_cdhaf")
+
+[node name="Building2NdSteelFrame" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(793, -275)
+texture = ExtResource("15_xaaui")
+script = ExtResource("5_xakxk")
+
+[node name="Stairs1" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(252, -177)
+texture = ExtResource("16_6r7cw")
+script = ExtResource("14_cdhaf")
+
+[node name="Stairs" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(226, -140)
+texture = ExtResource("17_rcic7")
+script = ExtResource("5_xakxk")
+
+[node name="BuildingEaves11" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(355, 50)
+texture = ExtResource("18_sa86r")
+script = ExtResource("14_cdhaf")
+
+[node name="BuildingEaves12" type="Sprite2D" parent="World/Storey1Body"]
+position = Vector2(899, 266)
+texture = ExtResource("19_n3o2l")
+script = ExtResource("5_xakxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(603, -189.5)
+shape = SubResource("RectangleShape2D_gay7e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(147, 36)
+shape = SubResource("RectangleShape2D_r7kw1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(181.5, -210.5)
+shape = SubResource("RectangleShape2D_yw8qo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(218, -137)
+shape = SubResource("RectangleShape2D_0mcpw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(206, -99)
+shape = SubResource("RectangleShape2D_eveh5")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(366, 75)
+shape = SubResource("RectangleShape2D_gc5qw")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(163.5, 306)
+shape = SubResource("RectangleShape2D_4rxpc")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(291, 106)
+shape = SubResource("RectangleShape2D_wyheg")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(483, 200)
+shape = SubResource("RectangleShape2D_ontsk")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(420, 306)
+shape = SubResource("RectangleShape2D_av7hr")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(842, 306)
+shape = SubResource("RectangleShape2D_t0m4f")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(592.5, -42)
+shape = SubResource("RectangleShape2D_sbixk")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(1019.5, -182)
+shape = SubResource("RectangleShape2D_ltwd0")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(1063, 36)
+shape = SubResource("RectangleShape2D_v7qoh")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(1014.25, 260.625)
+shape = SubResource("RectangleShape2D_4ok8d")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(911, 307)
+shape = SubResource("CircleShape2D_dic0b")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(987, 280)
+shape = SubResource("CircleShape2D_t0k3y")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(946, 317)
+shape = SubResource("CircleShape2D_dkyft")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(959, 286)
+shape = SubResource("CircleShape2D_yqhpr")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(530, 348.5)
+shape = SubResource("RectangleShape2D_dic0b")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(290.75, 278)
+shape = SubResource("RectangleShape2D_t0k3y")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="World/Storey1Body"]
+position = Vector2(165, 75)
+shape = SubResource("RectangleShape2D_dkyft")
+
+[node name="SpawnPoints" type="Node2D" parent="World"]
+position = Vector2(41, 47)
+
+[node name="door2_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(188, 242)
+
+[node name="door3_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(646, 244)
+
+[node name="storey_spawn" type="Marker2D" parent="World/SpawnPoints"]
+position = Vector2(141, -208)
+
+[node name="InDoor" type="Node2D" parent="World"]
+script = ExtResource("21_57aay")
+
+[node name="BuildingDoorOpen" type="Sprite2D" parent="World/InDoor"]
+position = Vector2(211, 66)
+texture = ExtResource("22_h7flu")
+script = ExtResource("8_dkehq")
+
+[node name="ShelterBase" type="Marker2D" parent="World/InDoor/BuildingDoorOpen"]
+position = Vector2(-0.61, 20)
+
+[node name="BuildingDoor" type="Sprite2D" parent="World/InDoor"]
+position = Vector2(211, 66)
+texture = ExtResource("23_ysal1")
+script = ExtResource("8_dkehq")
+
+[node name="ShelterBase" type="Marker2D" parent="World/InDoor/BuildingDoor"]
+position = Vector2(-1, 20)
+
+[node name="Area2D" type="Area2D" parent="World/InDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/InDoor/Area2D"]
+position = Vector2(211, 72.5)
+shape = SubResource("RectangleShape2D_yqhpr")
+
+[node name="DoorBody" type="StaticBody2D" parent="World/InDoor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/InDoor/DoorBody"]
+position = Vector2(211.5, 75)
+shape = SubResource("RectangleShape2D_scw1n")
+
+[node name="DoorArea" type="Node2D" parent="World"]
+
+[node name="Rdoor2" type="Area2D" parent="World/DoorArea"]
+script = ExtResource("24_curnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/DoorArea/Rdoor2"]
+position = Vector2(227.5, 305.5)
+shape = SubResource("RectangleShape2D_sdf2l")
+
+[node name="Rdoor3" type="Area2D" parent="World/DoorArea"]
+script = ExtResource("25_al8ot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/DoorArea/Rdoor3"]
+position = Vector2(683, 305.5)
+shape = SubResource("RectangleShape2D_vu23b")
+
+[node name="Rstorey" type="Area2D" parent="World/DoorArea"]
+script = ExtResource("26_1cvmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/DoorArea/Rstorey"]
+position = Vector2(190.25, -161)
+shape = SubResource("RectangleShape2D_lht3b")
+
+[node name="NightControl" type="Node" parent="World"]
+script = ExtResource("27_mmda6")
+
+[node name="DarknessOverlay" type="ColorRect" parent="World/NightControl"]
+visible = false
+z_index = 2100
+offset_left = 94.0
+offset_top = -362.0
+offset_right = 1426.0
+offset_bottom = 413.0
+color = Color(0, 0, 0, 0.866667)
+
+[node name="PlaceableFloor1" type="Area2D" parent="World"]
+script = ExtResource("28_g6duv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/PlaceableFloor1"]
+position = Vector2(386.5, 194)
+shape = SubResource("RectangleShape2D_1kfcg")
+
+[node name="PlaceableFloor2" type="Area2D" parent="World"]
+script = ExtResource("28_g6duv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/PlaceableFloor2"]
+position = Vector2(810, 74)
+shape = SubResource("RectangleShape2D_akhf8")
+
+[node name="PlaceableFloor3" type="Area2D" parent="World"]
+script = ExtResource("28_g6duv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/PlaceableFloor3"]
+position = Vector2(392, -70)
+shape = SubResource("RectangleShape2D_lksjn")
+
+[node name="PlaceableWall" type="Area2D" parent="World"]
+script = ExtResource("29_7sh4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/PlaceableWall"]
+position = Vector2(387, 52)
+shape = SubResource("RectangleShape2D_7scco")
+
+[node name="WallMarker" type="Marker2D" parent="World/PlaceableWall"]
+position = Vector2(372, 80)
+
+[node name="Player" parent="World" instance=ExtResource("20_pohu6")]
+position = Vector2(227, 263)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="World"]
+position = Vector2(0, 4)
+navigation_polygon = SubResource("NavigationPolygon_lksjn")
+
+[node name="CarLift" parent="World" instance=ExtResource("32_8pmn1")]
+position = Vector2(795, 92)
+
+[node name="Car1" parent="World" instance=ExtResource("32_64imm")]
+position = Vector2(798, 80)
+
+[node name="CarLift1SwitchFront" parent="World" instance=ExtResource("34_bia7l")]
+position = Vector2(911, 15)
+
+[node name="WardrobeFront" parent="World" instance=ExtResource("35_3grtd")]
+position = Vector2(338, 101)
+
+[node name="OilCollectorFront" parent="World" instance=ExtResource("36_n77n3")]
+position = Vector2(663, 236)
+
+[node name="GridVisualizer" parent="World" instance=ExtResource("35_n77n3")]
+
+[node name="EditButton" type="Button" parent="."]
+offset_left = 258.0
+offset_top = -39.0
+offset_right = 316.0
+offset_bottom = -8.0
+text = "annnn"
+script = ExtResource("30_mrhlm")

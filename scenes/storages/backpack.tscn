@@ -1,0 +1,305 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbgoqifwvbdsd"]
+
+[ext_resource type="Script" uid="uid://cyfeivomrvl35" path="res://scripts/storage/backpack.gd" id="1_l1ewb"]
+[ext_resource type="Texture2D" uid="uid://bpeejfche0qqa" path="res://art_resource/changjing/item.png" id="2_d0miv"]
+[ext_resource type="Script" uid="uid://c1y3iwj2huwwh" path="res://scripts/storage/slot.gd" id="3_28tt4"]
+[ext_resource type="Texture2D" uid="uid://dv2mahkncail2" path="res://art_resource/changjing/g.png" id="3_uwy55"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="5_lugdk"]
+
+[node name="backpack" type="CanvasLayer"]
+script = ExtResource("1_l1ewb")
+
+[node name="ToggleButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "按钮"
+
+[node name="InventoryPanel" type="PanelContainer" parent="."]
+offset_right = 69.0
+offset_bottom = 177.0
+
+[node name="GridContainer" type="GridContainer" parent="InventoryPanel"]
+layout_mode = 2
+columns = 2
+
+[node name="Slot1" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot1"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot1"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot2" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot2"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot2"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot3" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot3"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot3"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot4" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot4"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot4"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot5" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot5"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot5"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot6" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot6"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot6"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot7" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot7"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot7"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot8" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot8"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot8"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot8"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot9" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot9"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot9"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot9"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4
+
+[node name="Slot10" type="TextureRect" parent="InventoryPanel/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_d0miv")
+script = ExtResource("3_28tt4")
+
+[node name="Icon" type="TextureRect" parent="InventoryPanel/GridContainer/Slot10"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Highlight" type="TextureRect" parent="InventoryPanel/GridContainer/Slot10"]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_uwy55")
+
+[node name="CountLabel" type="Label" parent="InventoryPanel/GridContainer/Slot10"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("5_lugdk")
+theme_override_font_sizes/font_size = 4

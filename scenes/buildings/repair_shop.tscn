@@ -1,0 +1,193 @@
+[gd_scene load_steps=21 format=3 uid="uid://c1wyly4wi70af"]
+
+[ext_resource type="Texture2D" uid="uid://dxv5dxr71jmtt" path="res://art_resource/Repair Shop.png" id="1_rfwr3"]
+[ext_resource type="Script" uid="uid://bsjgjfnsxrh2s" path="res://scripts/ub.gd" id="2_no60q"]
+[ext_resource type="Texture2D" uid="uid://doaysx04hasq" path="res://art_resource/Repair Shop_1.png" id="3_njlp8"]
+[ext_resource type="Texture2D" uid="uid://b82gsddmjdvs1" path="res://art_resource/Repair Shop_stairs.png" id="5_ajuyo"]
+[ext_resource type="Script" uid="uid://cu51ii8kacqxa" path="res://scripts/building/door_area.gd" id="5_no60q"]
+[ext_resource type="Script" uid="uid://bmqm4onpv5gb5" path="res://scripts/building/door_1.gd" id="7_njlp8"]
+[ext_resource type="Script" uid="uid://j130ng6nwaaq" path="res://scripts/building/door_2.gd" id="8_no60q"]
+[ext_resource type="Script" uid="uid://l7p3xhmahbc8" path="res://scripts/building/door_4.gd" id="8_yp5t5"]
+[ext_resource type="Script" uid="uid://da1aktg48k6kj" path="res://scripts/building/door_3.gd" id="9_3s7cv"]
+[ext_resource type="FontFile" uid="uid://hc0qq2la5cr1" path="res://zpix.ttf" id="10_3s7cv"]
+[ext_resource type="Script" uid="uid://bv8yfvuoips81" path="res://scripts/top_label.gd" id="11_3s7cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o31fy"]
+size = Vector2(86, 251)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w20td"]
+size = Vector2(452, 253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y12nr"]
+size = Vector2(99, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4x2ye"]
+size = Vector2(44.5, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jw4d"]
+size = Vector2(4, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njlp8"]
+size = Vector2(68.5, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yp5t5"]
+size = Vector2(53, 86.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajuyo"]
+size = Vector2(167.5, 104.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no60q"]
+size = Vector2(48, 88.5)
+
+[node name="RepairShop" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="HouseBody" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBody"]
+position = Vector2(460, 160)
+texture = ExtResource("1_rfwr3")
+script = ExtResource("2_no60q")
+
+[node name="ShelterBase" type="Marker2D" parent="HouseBody/Sprite2D"]
+position = Vector2(-8, -33)
+
+[node name="RepairShop1" type="Sprite2D" parent="HouseBody"]
+position = Vector2(135, 169)
+texture = ExtResource("3_njlp8")
+script = ExtResource("2_no60q")
+
+[node name="ShelterBase" type="Marker2D" parent="HouseBody/RepairShop1"]
+position = Vector2(1, 154)
+
+[node name="RepairShopStairs" type="Sprite2D" parent="HouseBody"]
+position = Vector2(293, 218)
+texture = ExtResource("5_ajuyo")
+script = ExtResource("2_no60q")
+
+[node name="ShelterBase" type="Marker2D" parent="HouseBody/RepairShopStairs"]
+position = Vector2(-1, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBody"]
+position = Vector2(179, 239.5)
+shape = SubResource("RectangleShape2D_o31fy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HouseBody"]
+position = Vector2(540, 240.5)
+shape = SubResource("RectangleShape2D_w20td")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HouseBody"]
+position = Vector2(270.5, 152.5)
+shape = SubResource("RectangleShape2D_y12nr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HouseBody"]
+position = Vector2(294.75, 280)
+shape = SubResource("RectangleShape2D_4x2ye")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="HouseBody"]
+position = Vector2(271, 297.5)
+shape = SubResource("RectangleShape2D_1jw4d")
+
+[node name="DoorArea" type="Node2D" parent="."]
+script = ExtResource("5_no60q")
+
+[node name="Door1" type="Area2D" parent="DoorArea"]
+script = ExtResource("7_njlp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea/Door1"]
+position = Vector2(180, 315)
+shape = SubResource("RectangleShape2D_njlp8")
+
+[node name="Door2" type="Area2D" parent="DoorArea"]
+script = ExtResource("8_no60q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea/Door2"]
+position = Vector2(370.5, 335.75)
+shape = SubResource("RectangleShape2D_yp5t5")
+
+[node name="Door3" type="Area2D" parent="DoorArea"]
+script = ExtResource("9_3s7cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea/Door3"]
+position = Vector2(559.25, 325.75)
+shape = SubResource("RectangleShape2D_ajuyo")
+
+[node name="Door4" type="Area2D" parent="DoorArea"]
+script = ExtResource("8_yp5t5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea/Door4"]
+position = Vector2(251, 165.75)
+shape = SubResource("RectangleShape2D_no60q")
+
+[node name="DoorLabel1" type="Label" parent="DoorArea"]
+offset_left = 157.0
+offset_top = 327.0
+offset_right = 209.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("10_3s7cv")
+theme_override_font_sizes/font_size = 12
+text = "[F]进入"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_3s7cv")
+
+[node name="DoorLabel2" type="Label" parent="DoorArea"]
+offset_left = 348.0
+offset_top = 321.0
+offset_right = 400.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("10_3s7cv")
+theme_override_font_sizes/font_size = 12
+text = "[F]进入"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_3s7cv")
+
+[node name="DoorLabel3" type="Label" parent="DoorArea"]
+offset_left = 536.0
+offset_top = 325.0
+offset_right = 588.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("10_3s7cv")
+theme_override_font_sizes/font_size = 12
+text = "[F]进入"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_3s7cv")
+
+[node name="DoorLabel4" type="Label" parent="DoorArea"]
+offset_left = 229.0
+offset_top = 152.0
+offset_right = 281.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0, 0.917647, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("10_3s7cv")
+theme_override_font_sizes/font_size = 12
+text = "[F]进入"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_3s7cv")
+
+[connection signal="body_entered" from="DoorArea/Door1" to="DoorArea" method="_on_door_1_body_entered"]
+[connection signal="body_exited" from="DoorArea/Door1" to="DoorArea" method="_on_door_1_body_exited"]
+[connection signal="body_entered" from="DoorArea/Door2" to="DoorArea" method="_on_door_2_body_entered"]
+[connection signal="body_exited" from="DoorArea/Door2" to="DoorArea" method="_on_door_2_body_exited"]
+[connection signal="body_entered" from="DoorArea/Door3" to="DoorArea" method="_on_door_3_body_entered"]
+[connection signal="body_exited" from="DoorArea/Door3" to="DoorArea" method="_on_door_3_body_exited"]
+[connection signal="body_entered" from="DoorArea/Door4" to="DoorArea" method="_on_door_4_body_entered"]
+[connection signal="body_exited" from="DoorArea/Door4" to="DoorArea" method="_on_door_4_body_exited"]

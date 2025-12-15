@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bblm0qjnj1ucs"]
+
+[ext_resource type="Texture2D" uid="uid://bvqf6jx5m02aj" path="res://art_resource/Fewobject/Tea table.png" id="1_5afcb"]
+[ext_resource type="Script" uid="uid://blakccx5sxff2" path="res://scripts/furniture/tea_table.gd" id="1_e6aqp"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="4_8ee8y"]
+[ext_resource type="Script" uid="uid://b7ftj50m7hjuh" path="res://scripts/furniture/surface_area.gd" id="4_y5tts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jh58"]
+size = Vector2(62, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6aqp"]
+size = Vector2(62, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f6ke"]
+size = Vector2(64, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buusc"]
+size = Vector2(64, 48)
+
+[node name="TeaTable" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_e6aqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5afcb")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_6jh58")
+
+[node name="PutPlace" type="Area2D" parent="."]
+script = ExtResource("4_8ee8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_e6aqp")
+
+[node name="SurfaceArea" type="Area2D" parent="."]
+position = Vector2(6, 8)
+script = ExtResource("4_y5tts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SurfaceArea"]
+position = Vector2(-6, -18.5)
+shape = SubResource("RectangleShape2D_2f6ke")
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(10, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-10, -6)
+shape = SubResource("RectangleShape2D_buusc")
+
+[node name="StackContainer" type="Node2D" parent="."]

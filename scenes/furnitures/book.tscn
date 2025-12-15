@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://ye78i7ceumqw"]
+
+[ext_resource type="Script" uid="uid://c70ecomtwjbrq" path="res://scripts/furniture/book.gd" id="1_fijbg"]
+[ext_resource type="Texture2D" uid="uid://cux1mwmogwkdq" path="res://art_resource/changjing/book.png" id="2_fijbg"]
+[ext_resource type="Texture2D" uid="uid://defg7hi2o004c" path="res://art_resource/thing/mb.png" id="3_f0xhj"]
+[ext_resource type="Script" uid="uid://cmo3k2ewe6urh" path="res://scripts/furniture/put_place.gd" id="4_f0xhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0hms"]
+size = Vector2(24, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fijbg"]
+size = Vector2(24, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0xhj"]
+size = Vector2(26, 15)
+
+[node name="Book" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_fijbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fijbg")
+
+[node name="ShelterBase" type="Marker2D" parent="Sprite2D"]
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_f0xhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y0hms")
+
+[node name="PutPlace" type="Area2D" parent="."]
+position = Vector2(-0.5, 1)
+script = ExtResource("4_f0xhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PutPlace"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_fijbg")
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_f0xhj")
+
+[node name="StackPoint" type="Marker2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="StackContainer" type="Node2D" parent="."]
